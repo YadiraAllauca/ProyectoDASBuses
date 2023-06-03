@@ -16,5 +16,11 @@ class MainActivity : AppCompatActivity() {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(binding.root)
 
+        binding.btnFilter.setOnClickListener {
+                val intent = Intent(this, FilterMenuActivity::class.java).apply {
+                }
+                startActivity(intent)
+        }
+
     }
 }
