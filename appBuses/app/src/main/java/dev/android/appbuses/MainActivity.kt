@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import dev.android.appbuses.databinding.ActivityMainBinding
-import dev.android.appbuses.databinding.ActivityRegisterBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -24,6 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnProfile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
+
+        binding.textView4.setOnClickListener {
+            val intent = Intent(this, BusDetailActivity::class.java).apply {
             }
             startActivity(intent)
         }
