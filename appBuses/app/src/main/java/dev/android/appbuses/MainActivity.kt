@@ -22,5 +22,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
         }
 
+        binding.btnProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
     }
 }
