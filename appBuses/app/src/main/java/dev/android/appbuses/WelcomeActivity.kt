@@ -15,6 +15,12 @@ class WelcomeActivity : AppCompatActivity() {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(binding.root)
 
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
+
         binding.btnRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java).apply {
             }
