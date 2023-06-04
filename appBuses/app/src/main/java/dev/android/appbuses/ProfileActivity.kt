@@ -37,5 +37,11 @@ class ProfileActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
+
+        binding.btnHistory.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
     }
 }
