@@ -25,5 +25,11 @@ class ProfileActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
         }
+
+        binding.btnEditInfo.setOnClickListener {
+            val intent = Intent(this, ProfileInfoActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
     }
 }
