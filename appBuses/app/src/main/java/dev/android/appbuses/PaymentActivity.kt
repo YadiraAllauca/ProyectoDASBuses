@@ -1,6 +1,7 @@
 package dev.android.appbuses
 
 import android.R
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
@@ -28,6 +29,22 @@ class PaymentActivity : AppCompatActivity() {
 
         binding.btnPlus.setOnClickListener {
             binding.txtAmount.text = (binding.txtAmount.text.toString().toInt() + 1).toString()
+        }
+
+        binding.btnProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+
+        binding.btnNext.setOnClickListener {
+            val intent = Intent(this, PaymentSuccessfulActivity::class.java).apply {
+            }
+            startActivity(intent)
         }
     }
 }
