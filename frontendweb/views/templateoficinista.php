@@ -18,7 +18,7 @@
 
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark; navBg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="redireccion.php?action=home">
                     <img src="img/safey.jpg" class="avatar"> </a>
@@ -42,7 +42,10 @@
                         <a class="nav-link active; navTemplate" href="redireccion.php?action=validation">Validation</a>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
+                <a class="navbar-brand" href="redireccion.php?action=home">
+                    <img src="img/avatar.png" class="avatar" onclick=animate> </a>
+                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
+                
             </div>
         </nav>
     </div>
@@ -57,6 +60,21 @@
         <p>
             <br>
             <b>______________________________________</b>
+            <a href="">
+                <img src="img/mail.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/instagram.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/twitter.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/facebook.png" class="socialnetwork">
+            </a>
             <b>______________________________________</b>
             <br>
             <b>Copyright © 2023 Safey</b>
