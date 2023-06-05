@@ -18,34 +18,66 @@
 
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark; navBg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="redireccion.php?action=home">
+        <nav class="navbar navbar-expand-lg navbar-dark;">
+            <div class="container-fluid" style="display:flex;">
+            <a class="navbar-brand" href="redireccion.php?action=home">
                     <img src="img/safey.jpg" class="avatar"> </a>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    </ul>
+                    <a class="navbar-brand" href="redireccion.php?action=home" style="justify-content:right">
+                    <img src="img/avatar.png" class="avatar" onclick=animate> </a>
+                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <nav class="navbar-expand-lg navbar-dark navBg custom-nav">
+            <div class="container-fluid">                
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active; navTemplate" href="redireccion.php?action=buses">Buses</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
+                    </li>                
                     <li class="nav-item">
-                        <a class="nav-link active; navTemplate" href="redireccion.php?action=frequencies">Frequencies</a>
+                        <a class="nav-link active; navTemplate"
+                            href="redireccion.php?action=frequencies">Frequencies</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active; navTemplate" href="redireccion.php?action=sales">Sales</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active; navTemplate" href="redireccion.php?action=validation">Validation</a>
                     </li>
                 </ul>
-                <a class="navbar-brand" href="redireccion.php?action=home">
-                    <img src="img/avatar.png" class="avatar" onclick=animate> </a>
-                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
                 
+
             </div>
         </nav>
     </div>
@@ -79,7 +111,8 @@
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="redireccion.php?action=home" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
+            <b><a href="redireccion.php?action=home" style="color:white">Home</a> | <a href=""
+                    style="color:white">About</a></b>
         </p>
     </footer>
 </body>

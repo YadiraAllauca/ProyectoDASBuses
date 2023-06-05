@@ -46,8 +46,25 @@ a {
 }
 .navTemplate{
     color: black;
-    font-weight: bold;
 }
 .socialnetwork{
     height: 25px;
+}
+.navBg{
+    color: black;
+    background-color: lightgray;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    
+}
+
+.custom-nav .navbar-nav li:not(:last-child) a {
+    margin-right: 50px;
+}
+
+.custom-nav {
+    display: flex;
+    align-items: center;
 }
