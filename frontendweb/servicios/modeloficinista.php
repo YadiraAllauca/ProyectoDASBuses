@@ -7,7 +7,7 @@ class EnlacesPaginas
             $enlacesModel == "frequencies" ||
             $enlacesModel == "sales" ||
             $enlacesModel == "validation"){
-                $module = "views/modules/".$enlacesModel.".php";
+                $module = "views/modules/".$enlacesModel."oficinista.php";
             }else{
             $module = "views/modules/homeoficinista.php";
         }
