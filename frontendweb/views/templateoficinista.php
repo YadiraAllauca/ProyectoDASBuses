@@ -32,14 +32,14 @@
                         <a class="nav-link active; navTemplate" href="redireccion.php?action=frequencies">Frequencies</a>
                     </li>
                 </ul>
-                <ul class=navbar-nav>
-                    <li>
-                        <a href="">Sales</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active; navTemplate" href="redireccion.php?action=sales">Sales</a>
                     </li>
                 </ul>
-                <ul>
-                    <li>
-                        <a href="">Validation</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active; navTemplate" href="redireccion.php?action=validation">Validation</a>
                     </li>
                 </ul>
                 <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
@@ -49,7 +49,7 @@
     <section>
         <?php
         $mvc = new MvcController();
-        $mvc->enlacesPaginasController();
+        $mvc->enlacesPaginasControllerOficinista();
         ?>
     </section>
 

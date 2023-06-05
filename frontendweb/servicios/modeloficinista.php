@@ -1,7 +1,7 @@
 <?php
 class EnlacesPaginas
 {
-    public static function enlacesPaginasModel($enlacesModel)
+    public static function enlacesPaginasModelOficinista($enlacesModel)
     {
 
         $module = "views/modules/homeoficinista.php";

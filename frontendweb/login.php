@@ -26,7 +26,7 @@ if(isset($_POST['envio'])){
         </nav>
     </header>
     <div class="divFormulario">
-        <form action="index.php" class="formularioLogin" method="POST">
+        <form action="login.php" class="formularioLogin" method="POST">
             <div class="divTituloLogin">
                 <h3>Login</h3>
             </div>

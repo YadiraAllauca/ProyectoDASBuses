@@ -4,5 +4,7 @@ require_once "controllers/controlleroficinista.php";
 require_once "servicios/modeloficinista.php";
 
 $mvc = new MvcController();
-$mvc -> plantilla(); 
+
+$mvc -> plantillaoficinista(); 
+
 ?>

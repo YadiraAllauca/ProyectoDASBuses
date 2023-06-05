@@ -1,3 +1,9 @@
+<?php
+if (isset($_POST['login'])) {
+    header('Location: ' . "login.php");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +29,9 @@
 
                     </li>
                 </ul>
-                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Log In</button>
+                <form action="login.php" method="POST">
+                    <button type="submit" class="btn btn-danger; buttonStyle" id="login">Log In</button>
+                </form>
             </div>
         </nav>
     </header>
