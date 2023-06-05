@@ -15,17 +15,26 @@
 
 <body class="bodyBack">
     <header class="headerStyle">
-        <div style="color:white">
-            <img class="avatar" src="img/safey.jpg">.....--------------------------------------------.........-------------------------------------------------------------------------------------------------.....................
-            <button type="button" class="btn buttonStyle" id="btnLogin">Login</button>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <img src="img/safey.jpg" class="avatar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Log In</button>
+            </div>
+        </nav>
     </header>
-    <div class="indexStyle"> 
-    <br><br><br><br>    
-    <p>Welcome to <img class="avatar" src="img/safey.jpg"></p>
-        
-    <p>With safety you can travel safely to all your favorite destinations!</p></div>
-   
+
+    <div class="indexStyle">
+        <br><br><br><br>
+        <p>Welcome to <img class="avatar" src="img/safey.jpg"></p>
+
+        <p>With safety you can travel safely to all your favorite destinations!</p>
+    </div>
+
 
     <footer class="footerStyle">
         <p>

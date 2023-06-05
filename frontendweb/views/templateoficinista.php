@@ -18,40 +18,39 @@
 
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bodyBack">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="redireccion.php?action=home"> 
-                    <img src="img/plant.png" class="avatar"> </a>  
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="redireccion.php?action=home">Home</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=invernaderos">Invernaderos</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=registrarinvernadero">Registrar Invernadero</a>
-                        </li>
-                    </ul>
-                    <div style="color:white">
-                    <p>Bienvenido:</p>
-                    <?php
-                        echo $_SESSION['nombre']." ".$_SESSION['apellido'];
-                        ?>
-                        </div>              
+                <a class="navbar-brand" href="redireccion.php?action=home">
+                    <img src="img/safey.jpg" class="avatar"> </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active; navTemplate" href="redireccion.php?action=buses">Buses</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active; navTemplate" href="redireccion.php?action=frequencies">Frequencies</a>
+                    </li>
+                </ul>
+                <ul class=navbar-nav>
+                    <li>
+                        <a href="">Sales</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="">Validation</a>
+                    </li>
+                </ul>
                 <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
             </div>
         </nav>
     </div>
     <section>
-<?php
-$mvc = new MvcController();
-$mvc-> enlacesPaginasController();
-?>
+        <?php
+        $mvc = new MvcController();
+        $mvc->enlacesPaginasController();
+        ?>
     </section>
 
     <footer class="footerStyle">
@@ -62,7 +61,7 @@ $mvc-> enlacesPaginasController();
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="">Home</a> | <a href="">About</a></b>
+            <b><a href="redireccion.php?action=home" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
         </p>
     </footer>
 </body>
@@ -71,7 +70,7 @@ $mvc-> enlacesPaginasController();
 </html>
 <script>
     var boton = document.getElementById("btnLogout");
-    boton.onclick = function() {
-        window.location = "logout.php";        
+    boton.onclick = function () {
+        window.location = "logout.php";
     }
 </script>

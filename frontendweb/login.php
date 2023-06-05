@@ -19,9 +19,11 @@ if(isset($_POST['envio'])){
 
 <body class="bodyBack">
 <header class="headerStyle">
-        <div>
-            <img class="avatar" src="img/safey.jpg">
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <img src="img/safey.jpg" class="avatar">
+            </div>
+        </nav>
     </header>
     <div class="divFormulario">
         <form action="index.php" class="formularioLogin" method="POST">
@@ -52,7 +54,7 @@ if(isset($_POST['envio'])){
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="">Home</a> | <a href="">About</a></b>
+            <b><a href="" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
         </p>
     </footer>
 </body>

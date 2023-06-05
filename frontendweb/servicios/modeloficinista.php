@@ -4,7 +4,7 @@ class EnlacesPaginas
     public static function enlacesPaginasModel($enlacesModel)
     {
 
-        $module = "views/modules/home.php";
+        $module = "views/modules/homeoficinista.php";
         return $module;
     }
 }
