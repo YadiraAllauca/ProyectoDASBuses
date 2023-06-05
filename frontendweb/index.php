@@ -48,11 +48,26 @@ if (isset($_POST['login'])) {
         <p>
             <br>
             <b>______________________________________</b>
+            <a href="">
+                <img src="img/mail.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/instagram.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/twitter.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/facebook.png" class="socialnetwork">
+            </a>
             <b>______________________________________</b>
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="">Home</a> | <a href="">About</a></b>
+            <b><a href="index.php" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
         </p>
     </footer>
 </body>
