@@ -1,9 +1,3 @@
-<?php
-if (isset($_POST['login'])) {
-    header('Location: ' . "login.php");
-
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,53 +15,27 @@ if (isset($_POST['login'])) {
 
 <body class="bodyBack">
     <header class="headerStyle">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <img src="img/safey.jpg" class="avatar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-
-                    </li>
-                </ul>
-                <form action="login.php" method="POST">
-                    <button type="submit" class="btn btn-danger; buttonStyle" id="login">Log In</button>
-                </form>
-            </div>
-        </nav>
+        <div style="color:white">
+            <img class="avatar" src="img/safey.jpg">.....--------------------------------------------.........-------------------------------------------------------------------------------------------------.....................
+            <button type="button" class="btn buttonStyle" id="btnLogin">Login</button>
+        </div>
     </header>
-
-    <div class="indexStyle">
-        <br><br><br><br>
-        <p>Welcome to <img class="avatar" src="img/safey.jpg"></p>
-
-        <p>With safety you can travel safely to all your favorite destinations!</p>
-    </div>
-
+    <div class="indexStyle"> 
+    <br><br><br><br>    
+    <p>Welcome to <img class="avatar" src="img/safey.jpg"></p>
+        
+    <p>With safety you can travel safely to all your favorite destinations!</p></div>
+   
 
     <footer class="footerStyle">
         <p>
             <br>
             <b>______________________________________</b>
-            <a href="">
-                <img src="img/mail.png" class="socialnetwork">
-            </a>
-            <b>_</b>
-            <a href="">
-                <img src="img/instagram.png" class="socialnetwork">
-            </a>
-            <b>_</b>
-            <a href="">
-                <img src="img/twitter.png" class="socialnetwork">
-            </a>
-            <b>_</b>
-            <a href="">
-                <img src="img/facebook.png" class="socialnetwork">
-            </a>
             <b>______________________________________</b>
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="index.php" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
+            <b><a href="">Home</a> | <a href="">About</a></b>
         </p>
     </footer>
 </body>

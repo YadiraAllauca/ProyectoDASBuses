@@ -19,14 +19,12 @@ if(isset($_POST['envio'])){
 
 <body class="bodyBack">
 <header class="headerStyle">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <img src="img/safey.jpg" class="avatar">
-            </div>
-        </nav>
+        <div>
+            <img class="avatar" src="img/safey.jpg">
+        </div>
     </header>
     <div class="divFormulario">
-        <form action="login.php" class="formularioLogin" method="POST">
+        <form action="index.php" class="formularioLogin" method="POST">
             <div class="divTituloLogin">
                 <h3>Login</h3>
             </div>
@@ -50,26 +48,11 @@ if(isset($_POST['envio'])){
         <p>
             <br>
             <b>______________________________________</b>
-            <a href="">
-                <img src="img/mail.png" class="socialnetwork">
-            </a>
-            <b>_</b>
-            <a href="">
-                <img src="img/instagram.png" class="socialnetwork">
-            </a>
-            <b>_</b>
-            <a href="">
-                <img src="img/twitter.png" class="socialnetwork">
-            </a>
-            <b>_</b>
-            <a href="">
-                <img src="img/facebook.png" class="socialnetwork">
-            </a>
             <b>______________________________________</b>
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="index.php" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
+            <b><a href="">Home</a> | <a href="">About</a></b>
         </p>
     </footer>
 </body>
