@@ -42,7 +42,7 @@ class PaymentActivity : AppCompatActivity() {
         }
 
         binding.btnNext.setOnClickListener {
-            val intent = Intent(this, PaymentSuccessfulActivity::class.java).apply {
+            val intent = Intent(this, SeatActivity::class.java).apply {
             }
             startActivity(intent)
         }
