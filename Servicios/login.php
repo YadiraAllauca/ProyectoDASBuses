@@ -22,6 +22,7 @@ $result = $sqlQuery->get_result();
 
 if ($fila = $result->fetch_assoc()) {
     $datosUsuario = array(
+        'id_usuario' => $fila['id_usuario'],
         'tipo_usuario' => $fila['tipo_usuario'],
         'id_coop' => $fila['id_coop']
     );
