@@ -26,7 +26,7 @@ class SeatActivity : AppCompatActivity() {
         }
 
         binding.btnNext.setOnClickListener {
-            val intent = Intent(this, PaymentSuccessfulActivity::class.java).apply {
+            val intent = Intent(this, FileActivity::class.java).apply {
             }
             startActivity(intent)
         }
