@@ -1,6 +1,4 @@
 <?php
-require 'conexion_bd.php';
-
 
 session_start();
 header('Access-Control-Allow-Origin:*');
