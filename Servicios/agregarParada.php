@@ -6,8 +6,13 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 
 include 'conexionBDRemota.php';
 
+$id_asignacion_pertenece = $_POST['id_asignacion_pertenece'];
+$costo_parada = $_POST['costo_parada'];
+$duracion_parada = $_POST['duracion_parada'];
+$origen_parada = $_POST['origen_parada'];
+$destino_parada = $_POST['destino_parada'];
 
-$sql = "";
+$sql = "INSERT INTO Paradas (id_asignacion_pertenece, costo_parada, duracion_parada, origen_parada, destino_parada) VALUES ('$id_asignacion_pertenece', '$costo_parada', '$duracion_parada','$origen_parada', '$destino_parada')";
 
 if ($conexion->query($sql)===TRUE) {
     echo json_encode(array('OK'=>TRUE));
