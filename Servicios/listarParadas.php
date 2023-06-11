@@ -13,18 +13,18 @@ $sql = "SELECT * FROM Paradas WHERE id_asignacion_pertenece = '$id_asignacion_pe
 $resultado = $conexion->query($sql);
 
 if ($resultado->num_rows > 0) {
-    $fila = $resultado->fetch_assoc();
-    
-    $datosParadas = array(
-        'costo_parada' => $fila['costo_parada'],
-        'duracion_parada' => $fila['duracion_parada'],
-        'origen_parada' => $fila['origen_parada'],
-        'destino_parada' => $fila['destino_parada']
-    );
-    
-    echo json_encode($datosParadas, JSON_UNESCAPED_UNICODE);
+    $lista = array();
+
+    while ($fila = $resultado->fetch_assoc()) {
+        $lista[] = $fila;
+    }
+
+    $json = json_encode($lista, JSON_UNESCAPED_UNICODE);
+
+    echo $json;
 } else {
-    echo json_encode(array('mensaje' => 'No hay paradas'), JSON_UNESCAPED_UNICODE);
+
+    echo json_encode(array('mensaje' => 'No se encontraron registros en la tabla'));
 }
 
 $conexion->close();
