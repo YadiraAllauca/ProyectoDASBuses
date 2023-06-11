@@ -3,6 +3,8 @@ package dev.android.appbuses
 import android.content.Intent
 import android.os.Bundle
 import android.view.Window
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import dev.android.appbuses.databinding.ActivityProfileBinding
 
@@ -42,6 +44,14 @@ class ProfileActivity : AppCompatActivity() {
             val intent = Intent(this, HistoryActivity::class.java).apply {
             }
             startActivity(intent)
+        }
+
+        val loadImage = registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback {
+            binding.imgProfile.setImageURI(it)
+        })
+
+        binding.btnCamera.setOnClickListener {
+            loadImage.launch("image/*")
         }
     }
 }
