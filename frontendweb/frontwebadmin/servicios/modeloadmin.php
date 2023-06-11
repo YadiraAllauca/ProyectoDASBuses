@@ -1,15 +1,13 @@
 <?php
 class EnlacesPaginas
 {
-    public static function enlacesPaginasModelOficinista($enlacesModel)
+    public static function enlacesPaginasModelAdmin($enlacesModel)
     {
-        if($enlacesModel == "buses" ||
-            $enlacesModel == "frequencies" ||
-            $enlacesModel == "sales" ||
-            $enlacesModel == "validation"){
-                $module = "views/modules/".$enlacesModel."oficinista.php";
+        if($enlacesModel == "cooperativas" ||
+            $enlacesModel == "frequencias" ){
+                $module = "views/modules/".$enlacesModel."admin.php";
             }else{
-            $module = "views/modules/homeoficinista.php";
+            $module = "views/modules/homeadmin.php";
         }
         return $module;
     }
