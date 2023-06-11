@@ -29,12 +29,12 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=invernaderos">Invernaderos</a>
+                            <a class="nav-link active" href="redireccion.php?action=cooperativas">Cooperativas</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=registrarinvernadero">Registrar Invernadero</a>
+                            <a class="nav-link active" href="redireccion.php?action=frecuencias">Frecuencias</a>
                         </li>
                     </ul>
                     <div style="color:white">

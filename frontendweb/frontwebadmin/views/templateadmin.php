@@ -29,12 +29,12 @@
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=invernaderos">Invernaderos</a>
+                            <a class="nav-link active" href="redireccion.php?action=cooperativas">Cooperativas</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=registrarinvernadero">Registrar Invernadero</a>
+                            <a class="nav-link active" href="redireccion.php?action=frecuencias">Frecuencias</a>
                         </li>
                     </ul>
                     <div style="color:white">
@@ -50,7 +50,7 @@
     <section>
 <?php
 $mvc = new MvcController();
-$mvc-> enlacesPaginasController();
+$mvc-> enlacesPaginasControllerAdmin();
 ?>
     </section>
 
@@ -58,11 +58,27 @@ $mvc-> enlacesPaginasController();
         <p>
             <br>
             <b>______________________________________</b>
+            <a href="">
+                <img src="img/mail.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/instagram.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/twitter.png" class="socialnetwork">
+            </a>
+            <b>_</b>
+            <a href="">
+                <img src="img/facebook.png" class="socialnetwork">
+            </a>
             <b>______________________________________</b>
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="">Home</a> | <a href="">About</a></b>
+            <b><a href="redireccion.php?action=home" style="color:white">Home</a> | <a href=""
+                    style="color:white">About</a></b>
         </p>
     </footer>
 </body>
