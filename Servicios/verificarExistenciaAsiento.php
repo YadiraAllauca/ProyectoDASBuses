@@ -11,10 +11,10 @@ $numero_puesto =  $_POST['numero_puesto'];
 
 $sql = "SELECT COUNT(*) as count FROM Asientos WHERE id_bus_pertenece = '$id_bus_pertenece' AND numero_puesto = '$numero_puesto'";
 
-$result = $conexion->query($sql);
+$resultado = $conexion->query($sql);
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+if ($resultado->num_rows > 0) {
+    $row = $resultado->fetch_assoc();
     $count = $row['count'];
 
     if ($count > 0) {
