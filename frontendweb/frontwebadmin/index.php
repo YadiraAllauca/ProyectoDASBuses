@@ -16,7 +16,7 @@
 <body class="bodyBack">
     <header class="headerStyle">
         <div style="color:white">
-            <img class="avatar" src="img/safey.png">.....--------------------------------------------.........-------------------------------------------------------------------------------------------------.....................
+            <img class="avatar" src="img/safey.png">
             <button type="button" class="btn buttonStyle" id="btnLogin">Login</button>
         </div>
     </header>
