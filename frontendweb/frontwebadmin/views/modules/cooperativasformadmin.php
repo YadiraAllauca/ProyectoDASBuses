@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="../../bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../../bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body class="bodyBack">
-    
+
     <header class="headerStyle">
         <div style="display: flex; justify-content: space-between;">
             <img class="avatar" src="../../img/safey.png">
@@ -28,7 +31,8 @@
                             <a class="nav-link active" href="redireccion.php?action=invernaderos">Cooperatives</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=registrarinvernadero" style="margin-right: 20px;">Frequencies</a>
+                            <a class="nav-link active" href="redireccion.php?action=registrarinvernadero"
+                                style="margin-right: 20px;">Frequencies</a>
                         </li>
                     </ul>
                 </a>
@@ -36,7 +40,7 @@
         </nav>
 
     </header>
-    <div class="indexStyleTitulo"> 
+    <div class="indexStyleTitulo">
         <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
             <h3 style="font-size: 20px; text-align: center;">
                 <span class="cooperative-info-title">COOPERATIVE INFO!</span>
@@ -76,9 +80,10 @@
                                 Add Frequency
                             </span>
                             <div class="input-group-append">
-                                <button type="button" class="btn btn-primary" id="openWindowBtn">
-                                    <i class="fas fa-plus"></i>
-                                </button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
+                                <i class="fas fa-plus"></i>
+                            </button>
+
                             </div>
                         </div>
                     </div>
@@ -92,6 +97,45 @@
         </div>
 
     </div>
+            <div class="modal fade" id="frequencyModal" tabindex="-1" aria-labelledby="frequencyModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="frequencyModalLabel">Add Frequency</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="frequencyTable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Origin</th>
+                                        <th scope="col">Destination</th>
+                                        <th scope="col">Duration</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+    
 
     <footer class="footerStyle">
         <p>
