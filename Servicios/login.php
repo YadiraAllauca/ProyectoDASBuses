@@ -18,9 +18,9 @@ if ($conexion->connect_error) {
 $sqlQuery = $conexion->prepare("SELECT * FROM Usuarios WHERE email_usuario = ? AND clave_usuario = ?");
 $sqlQuery->bind_param('ss', $email_usuario, $clave_usuario);
 $sqlQuery->execute();
-$result = $sqlQuery->get_result();
+$resultado = $sqlQuery->get_result();
 
-if ($fila = $result->fetch_assoc()) {
+if ($fila = $resultado->fetch_assoc()) {
     $datosUsuario = array(
         'id_usuario' => $fila['id_usuario'],
         'tipo_usuario' => $fila['tipo_usuario'],
@@ -31,7 +31,7 @@ if ($fila = $result->fetch_assoc()) {
     echo json_encode(array('mensaje' => 'Error en la autenticación'), JSON_UNESCAPED_UNICODE);
 }
 
-mysqli_free_result($result);
+mysqli_free_result($resultado);
 $sqlQuery->close();
 $conexion->close();
 ?>
