@@ -53,7 +53,7 @@
                     <li class="nav-item"></li>
                     </ul>
                     <a class="navbar-brand" href="redireccionoficinista.php?action=home" style="justify-content:right">
-                    <img src="img/avatar.png" class="avatar" onclick=animate> </a>
+                    <img src="img/avatar.png" class="avatar"> </a>
                 <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
             </div>
         </nav>
