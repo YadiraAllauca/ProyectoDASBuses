@@ -9,7 +9,7 @@ class EnlacesPaginas
             $enlacesModel == "validation"){
                 $module = "views/modules/".$enlacesModel."oficinista.php";
             }else{
-            $module = "views/modules/homeoficinista.php";
+            $module = "views/modules/home.php";
         }
         return $module;
     }

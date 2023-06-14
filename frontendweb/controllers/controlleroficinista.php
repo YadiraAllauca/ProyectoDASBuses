@@ -7,7 +7,7 @@ class MvcController{
         if(isset($_GET["action"])){
             $enlacesController = $_GET ["action"];
         }else{
-            $enlacesController = "homeoficinista.php";
+            $enlacesController = "home.php";
         }
         $respuesta = EnlacesPaginas ::enlacesPaginasModelOficinista($enlacesController);
         include $respuesta;
