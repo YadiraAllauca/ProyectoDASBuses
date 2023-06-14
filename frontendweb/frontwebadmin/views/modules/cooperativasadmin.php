@@ -23,16 +23,16 @@
                 <a class="navbar-brand" href="redireccion.php?action=home">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=invernaderos">Cooperatives</a>
+                            <a class="nav-link active" href="redireccion.php?action=cooperativas">Cooperatives</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="redireccion.php?action=registrarinvernadero" style="margin-right: 20px;">Frequencies</a>
+                            <a class="nav-link active" href="redireccion.php?action=frecuencias" style="margin-right: 20px;">Frequencies</a>
                         </li>
                     </ul>
                 </a>
             </div>
         </nav>
-        
+
     </header>
     <div class="indexStyleTitulo"> 
     <br><br><br><br>    
@@ -40,7 +40,9 @@
     <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
     <h3 style="font-size: 20px;">
         <span style="display: inline-block; vertical-align: middle;">New cooperative</span>
-        <img class="iconomas" src="../../img/mas.png">
+        <a href="cooperativasformadmin.php">
+            <img class="iconomas" src="../../img/mas.png">
+        </a>
     </h3>
     <table class="table table-striped">
         <thead>
