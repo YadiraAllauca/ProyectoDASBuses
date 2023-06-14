@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script type="text/javascript" src="easyui/jquery.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-
+    
 </head>
 
 <body>
@@ -52,7 +52,7 @@
                     <ul class="navbar-nav">
                     <li class="nav-item"></li>
                     </ul>
-                    <a class="navbar-brand" href="redireccionadmin.php?action=home" style="justify-content:right">
+                    <a class="navbar-brand" href="redireccionadmin.php?action=perfilusuario" style="justify-content:right">
                     <img src="img/avatar.png" class="avatar" onclick=animate> </a>
                 <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
             </div>
