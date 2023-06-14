@@ -23,7 +23,31 @@
             });
         });
     </script>
-    
+    <script>
+    $(document).ready(function() {
+        // Función para alternar la visibilidad de la contraseña
+        function togglePasswordVisibility(inputId, toggleButtonId) {
+            var input = $("#" + inputId);
+            var toggleButton = $("#" + toggleButtonId);
+
+            toggleButton.on("click", function() {
+                var type = input.attr("type");
+                if (type === "password") {
+                    input.attr("type", "text");
+                    toggleButton.html('<i class="fas fa-eye-slash"></i>');
+                } else {
+                    input.attr("type", "password");
+                    toggleButton.html('<i class="fas fa-eye"></i>');
+                }
+            });
+        }
+
+        // Alternar visibilidad de la contraseña para cada campo
+        togglePasswordVisibility("newPassword", "toggleNewPassword");
+        togglePasswordVisibility("newPasswordAgain", "toggleNewPasswordAgain");
+        togglePasswordVisibility("currentPassword", "toggleCurrentPassword");
+    });
+</script>
 </head>
 
 <body class="bodyBack">
