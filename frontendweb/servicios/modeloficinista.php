@@ -6,7 +6,8 @@ class EnlacesPaginas
         if($enlacesModel == "buses" ||
             $enlacesModel == "frequencies" ||
             $enlacesModel == "sales" ||
-            $enlacesModel == "validation"){
+            $enlacesModel == "validation" ||
+            $enlacesModel == "newbus"){
                 $module = "views/modules/".$enlacesModel."oficinista.php";
             }else{
             $module = "views/modules/home.php";

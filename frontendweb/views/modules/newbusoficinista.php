@@ -1,0 +1,1 @@
+<p>Aqui va el formulario de nuevos buses</p>
