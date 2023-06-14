@@ -5,7 +5,7 @@
     <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
         <h3 style="font-size: 20px;">
             <span style="display: inline-block; vertical-align: middle;">New cooperative</span>
-            <a href="cooperativasformadmin.php">
+            <a href="redireccionadmin.php?action=cooperativasform">
                 <img class="iconos" src="img/mas.png">
             </a>
         </h3>
@@ -15,7 +15,6 @@
                     <th scope="col">Cooperatives</th>
                     <th scope="col">Number of buses</th>
                     <th scope="col">Actions</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -25,9 +24,7 @@
                     <td>
                         <img class="iconos" src="img/editar.png">
                         <img class="iconos" src="img/borrar.png">
-
                     </td>
-
                 </tr>
             </tbody>
         </table>

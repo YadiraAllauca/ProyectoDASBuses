@@ -3,7 +3,9 @@
     <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
         <h3 style="font-size: 20px;">
             <span style="display: inline-block; vertical-align: middle;">New Frequency</span>
-            <img class="iconos" src="img/mas.png">
+            <a href="redireccionadmin.php?action=frecuenciasform">
+                <img class="iconos" src="img/mas.png">
+            </a>
         </h3>
         <table class="table table-striped">
             <thead>
