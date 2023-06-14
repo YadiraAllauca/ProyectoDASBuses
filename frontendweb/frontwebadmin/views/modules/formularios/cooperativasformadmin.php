@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.1.9/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.1.9/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <div class="indexStyleTitulo">
     <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
         <h3 style="font-size: 20px; text-align: center;">
@@ -92,20 +99,29 @@
     </div>
 </div>
 
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
+<script>
+    // Obtener el elemento del campo de entrada y los botones de incremento y decremento
+    var numBusesInput = document.getElementById('numBuses');
+    var incrementBtn = document.getElementById('incrementBtn');
+    var decrementBtn = document.getElementById('decrementBtn');
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <i class="fas fa-check-circle fa-4x text-success"></i>
-                <p class="mt-3">Cooperative saved successfully</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-            </div>
-        </div>
-    </div>
-</div>
+    // Manejar el evento clic del botón de incremento
+    incrementBtn.addEventListener('click', function() {
+        // Obtener el valor actual del campo de entrada
+        var currentValue = parseInt(numBusesInput.value);
+        // Incrementar el valor en 1
+        var incrementedValue = currentValue + 1;
+        // Establecer el nuevo valor en el campo de entrada
+        numBusesInput.value = incrementedValue;
+    });
+
+    // Manejar el evento clic del botón de decremento
+    decrementBtn.addEventListener('click', function() {
+        // Obtener el valor actual del campo de entrada
+        var currentValue = parseInt(numBusesInput.value);
+        // Decrementar el valor en 1 si es mayor que 0
+        var decrementedValue = currentValue > 0 ? currentValue - 1 : 0;
+        // Establecer el nuevo valor en el campo de entrada
+        numBusesInput.value = decrementedValue;
+    });
+</script>
