@@ -26,8 +26,15 @@ class BusDetailActivity : AppCompatActivity() {
         getWindow().decorView.setBackgroundResource(android.R.color.transparent)
         getWindow().setGravity(Gravity.BOTTOM)
 
+        val bundle = intent.extras
+        val option = bundle?.getString("option")
+
         binding.btnBuy.setOnClickListener {
-            val intent = Intent(this, PaymentActivity::class.java).apply {
+            var intent: Intent
+            if (option == "login") {
+                intent = Intent(this, PaymentActivity::class.java)
+            } else {
+                intent = Intent(this, LoginActivity::class.java)
             }
             startActivity(intent)
         }
