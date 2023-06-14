@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['envio'])){
-        header('Location: '."redireccion.php");
+        header('Location: '."redireccionadmin.php");
     
 }
 ?>
@@ -19,12 +19,14 @@ if(isset($_POST['envio'])){
 
 <body class="bodyBack">
 <header class="headerStyle">
-        <div>
-            <img class="avatar" src="img/safey.jpg">
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <img src="img/safey.jpg" class="avatar">
+            </div>
+        </nav>
     </header>
     <div class="divFormulario">
-        <form action="index.php" class="formularioLogin" method="POST">
+        <form action="login.php" class="formularioLogin" method="POST">
             <div class="divTituloLogin">
                 <h3>Login</h3>
             </div>

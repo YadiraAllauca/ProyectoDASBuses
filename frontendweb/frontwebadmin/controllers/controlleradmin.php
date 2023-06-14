@@ -1,6 +1,6 @@
 <?php
 class MvcController{
-    public function plantillaadmin(){
+    public function plantillaAdmin(){
         include "views/templateadmin.php";
     }
     public function enlacesPaginasControllerAdmin(){

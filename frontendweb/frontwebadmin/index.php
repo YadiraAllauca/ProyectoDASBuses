@@ -1,3 +1,9 @@
+<?php
+if (isset($_POST['login'])) {
+    header('Location: ' . "login.php");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,19 +21,29 @@
 
 <body class="bodyBack">
     <header class="headerStyle">
-        <div style="color:white">
-            <img class="avatar" src="img/safey.png">
-            <button type="button" class="btn buttonStyle" id="btnLogin">Login</button>
-        </div>
-    </header>
-    <div class="indexStyle"> 
-    <br><br><br><br>    
-    <p>Welcome to <img class="avatar" src="img/safey.png"></p>
-        
-    <p>With safety you can travel safely to all your favorite destinations!</p></div>
-   
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <img src="img/safey.jpg" class="avatar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
 
-    <footer class="footerStyle">
+                    </li>
+                </ul>
+                <form action="login.php" method="POST">
+                    <button type="submit" class="btn btn-danger; buttonStyle" id="login">Log In</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="indexStyle">
+        <br><br><br><br>
+        <p>Welcome to <img class="avatar" src="img/safey.jpg"></p>
+
+        <p>With safety you can travel safely to all your favorite destinations!</p>
+    </div>
+
+
     <footer class="footerStyle">
         <p>
             <br>
@@ -53,7 +69,6 @@
             <br>
             <b><a href="index.php" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
         </p>
-    </footer>
     </footer>
 </body>
 
