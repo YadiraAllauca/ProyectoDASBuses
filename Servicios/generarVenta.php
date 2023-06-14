@@ -15,8 +15,8 @@ $total_venta = $_POST['total_venta'];
 $codigo_qr_venta = $_POST['codigo_qr_venta'];
 $comprobante_venta = $_POST['comprobante_venta'];
 
-$sql = "INSERT INTO Ventas(id_cliente, id_parada, id_viaje_directo, fecha_hora, forma_pago, codigo_qr, comprobante, total) VALUES
-($id_cliente, $id_parada, $id_viaje_directo, '$fecha_hora', '$forma_pago', '$codigo_qr', '$comprobante', total)";
+$sql = "INSERT INTO Ventas(id_comprador, id_viaje_pertenece, id_parada_pertenece, fecha_venta, id_forma_pago, total_venta, codigo_qr_venta, comprobante_venta) VALUES
+($id_comprador, $id_viaje_pertenece, $id_parada_pertenece, '$fecha_venta', $id_forma_pago, $total_venta, '$codigo_qr_venta', '$comprobante_venta')";
 
 if ($conexion->query($sql)===TRUE) {
     echo json_encode(array('OK'=>TRUE));
