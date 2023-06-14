@@ -6,14 +6,14 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 
 include 'conexionBDRemota.php';
 
-$id_cliente = $_POST['id_cliente'];
-$id_parada = $_POST['id_parada'];
-$id_viaje_diario = $_POST['id_viaje_directo'];
-$fecha_hora = $_POST['fecha_hora'];
-$forma_pago = $_POST['forma_pago'];
-$codigo_qr = $_POST['codigo_qr'];
-$comprobante = $_POST['comprobante'];
-$total = $_POST['total'];
+$id_comprador= $_POST['id_comprador'];
+$id_viaje_pertenece = $_POST['id_viaje_pertenece'];
+$id_parada_pertenece = $_POST['id_parada_pertenece'];
+$fecha_venta = $_POST['fecha_venta'];
+$id_forma_pago = $_POST['id_forma_pago'];
+$total_venta = $_POST['total_venta'];
+$codigo_qr_venta = $_POST['codigo_qr_venta'];
+$comprobante_venta = $_POST['comprobante_venta'];
 
 $sql = "INSERT INTO Ventas(id_cliente, id_parada, id_viaje_directo, fecha_hora, forma_pago, codigo_qr, comprobante, total) VALUES
 ($id_cliente, $id_parada, $id_viaje_directo, '$fecha_hora', '$forma_pago', '$codigo_qr', '$comprobante', total)";
