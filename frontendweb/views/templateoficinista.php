@@ -20,7 +20,7 @@
     <div>
         <nav class="navbar navbar-expand-lg navbar-dark;">
             <div class="container-fluid" style="display:flex;">
-            <a class="navbar-brand" href="redireccion.php?action=home">
+            <a class="navbar-brand" href="redireccionoficinista.php?action=home">
                     <img src="img/safey.jpg" class="avatar"> </a>
                     <ul class="navbar-nav">
                     <li class="nav-item"></li>
@@ -52,7 +52,7 @@
                     <ul class="navbar-nav">
                     <li class="nav-item"></li>
                     </ul>
-                    <a class="navbar-brand" href="redireccion.php?action=home" style="justify-content:right">
+                    <a class="navbar-brand" href="redireccionoficinista.php?action=home" style="justify-content:right">
                     <img src="img/avatar.png" class="avatar" onclick=animate> </a>
                 <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
             </div>
@@ -63,17 +63,17 @@
             <div class="container-fluid">                
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active; navTemplate" href="redireccion.php?action=buses">Buses</a>
+                        <a class="nav-link active; navTemplate" href="redireccionoficinista.php?action=buses">Buses</a>
                     </li>                
                     <li class="nav-item">
                         <a class="nav-link active; navTemplate"
-                            href="redireccion.php?action=frequencies">Frequencies</a>
+                            href="redireccionoficinista.php?action=frequencies">Frequencies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; navTemplate" href="redireccion.php?action=sales">Sales</a>
+                        <a class="nav-link active; navTemplate" href="redireccionoficinista.php?action=sales">Sales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; navTemplate" href="redireccion.php?action=validation">Validation</a>
+                        <a class="nav-link active; navTemplate" href="redireccionoficinista.php?action=validation">Validation</a>
                     </li>
                 </ul>
                 
@@ -111,7 +111,7 @@
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="redireccion.php?action=home" style="color:white">Home</a> | <a href=""
+            <b><a href="redireccionoficinista.php?action=home" style="color:white">Home</a> | <a href=""
                     style="color:white">About</a></b>
         </p>
     </footer>

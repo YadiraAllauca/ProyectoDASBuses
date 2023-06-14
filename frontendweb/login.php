@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['envio'])){
-        header('Location: '."redireccion.php");
+        header('Location: '."redireccionoficinista.php");
     
 }
 ?>
