@@ -6,12 +6,11 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 
 include 'conexionBDRemota.php';
 
-$id_venta = $_POST['id_venta'];
+$id_venta_pertenece = $_POST['id_venta_pertenece'];
 $id_asiento = $_POST['id_asiento'];
 $cedula_pasajero = $_POST['cedula_pasajero'];
-$precio = $_POST['precio'];
 
-$sql = "INSERT INTO Detalle_Venta(id_venta, id_asiento, cedula_pasajero, precio) VALUES ($id_venta, $id_asiento, '$cedula_pasajero', $precio)";
+$sql = "INSERT INTO Detalle_Venta(id_venta_pertenece, id_asiento, cedula_pasajero) VALUES ($id_venta_pertenece, $id_asiento, '$cedula_pasajero')";
 
 if ($conexion->query($sql)===TRUE) {
     echo json_encode(array('OK'=>TRUE));
