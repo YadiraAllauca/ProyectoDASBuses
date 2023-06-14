@@ -4,7 +4,10 @@ class EnlacesPaginas
     public static function enlacesPaginasModelAdmin($enlacesModel)
     {
         if($enlacesModel == "cooperativas" ||
-            $enlacesModel == "frecuencias"){
+            $enlacesModel == "frecuencias"||
+            $enlacesModel == "nuevacontrasenia"||
+            $enlacesModel == "usuarioform"||
+            $enlacesModel == "perfilusuario"){
                 $module = "views/modules/".$enlacesModel."admin.php";
         }else if($enlacesModel == "cooperativasform" ||
             $enlacesModel == "frecuenciasform"){
