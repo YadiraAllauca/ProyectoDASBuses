@@ -28,11 +28,9 @@
                 <p class="fs-5 text-secondary">Nombre y Apellido</p>
             </div>
 
-            <div class="text-center mt-3">
-                <div class="border rounded p-3 d-flex flex-column">
-                    <button class="btn btn-outline-secondary mb-2 border-0 shadow-none" href="redireccionadmin.php?action=cooperativas">Edit Info Profile</button>
-                    <button class="btn btn-outline-secondary border-0 shadow-none">Change Password</button>
-                </div>
+            <div class="border rounded p-3 d-flex flex-column mt-3">
+                <a href="redireccionadmin.php?action=usuarioform" class="btn btn-outline-secondary mb-2 border-0 shadow-none">Edit Info Profile</a>
+                <a href="redireccionadmin.php?action=nuevacontrasenia" class="btn btn-outline-secondary mb-2 border-0 shadow-none">Change Password</a>
             </div>
         </div>
     </div>
