@@ -43,7 +43,7 @@
                         echo $_SESSION['nombre']." ".$_SESSION['apellido'];
                         ?>
                         </div>              
-                <button type="button" class="btn btn-danger" id="btnLogout">Logout</button>
+                <button type="button" class="btn btn-danger" id="btnLogout">Log Out</button>
             </div>
         </nav>
     </div>

@@ -30,7 +30,7 @@
     <header class="headerStyle">
         <div style="display: flex; justify-content: space-between;">
             <img class="avatar" src="../../img/safey.png">
-            <button type="button" class="btn buttonStyle" id="btnLogin">Login</button>
+            <button type="button" class="btn buttonStyle" id="btnLogin">Log Out</button>
         </div>
         <nav class="navbar-expand-lg navbar-dark menuStyle custom-nav">
             <div class="container-fluid">
