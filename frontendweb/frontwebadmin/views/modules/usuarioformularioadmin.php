@@ -52,7 +52,7 @@
     <div class="indexStyleTitulo">
         <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
             <h3 style="font-size: 20px; text-align: center;">
-                <span class="cooperative-info-title">COOPERATIVE INFO!</span>
+                <span class="cooperative-info-title">PROFILE INFO!</span>
             </h3>
             <form style="max-width: 400px; margin: 0 auto;">
                 <div class="row mb-3">
