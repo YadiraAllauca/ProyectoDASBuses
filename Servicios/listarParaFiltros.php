@@ -6,7 +6,18 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 
 include 'conexionBDRemota.php';
 
-$sql = "SELECT * FROM Cooperativas WHERE id_cooperativa<>1";
+$opcion = $_POST['opcion'];
+
+if($opcion == 1){
+  $sql = "SELECT * FROM Cooperativas WHERE id_cooperativa<>1";
+}
+else if($opcion == 2){
+  $sql = "SELECT DISTINCT descripcion_asiento FROM Asientos";
+}else if($opcion == 3){
+  $sql = "SELECT DISTINCT chasis_bus FROM Buses";
+}else{
+  $sql = "SELECT DISTINCT carroceria_bus FROM Buses";
+}
 
 $resultado = $conexion->query($sql);
 
@@ -26,4 +37,3 @@ if ($resultado->num_rows > 0) {
 }
 
 $conexion->close();
-?>

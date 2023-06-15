@@ -6,7 +6,9 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 
 include 'conexionBDRemota.php';
 
-$sql = "SELECT * FROM Cooperativas WHERE id_cooperativa<>1";
+$id_comprador = $_POST['id_comprador'];
+
+$sql= "SELECT * FROM Ventas WHERE id_comprador=$id_comprador";
 
 $resultado = $conexion->query($sql);
 
