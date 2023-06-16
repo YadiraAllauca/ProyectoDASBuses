@@ -42,6 +42,9 @@
             <div class="botonForm">
                 <button type="submit" class="form-control" id="envio" name="envio" style="background-color:green; color:white">Registrar</button>
             </div>
+            <div class="botonForm">
+                <button type="submit" class="form-control" id="envio" name="envio" style="background-color:green; color:white">Registrar</button>
+            </div>
         </form>
     </div>
     

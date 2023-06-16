@@ -9,7 +9,7 @@
 </thead>
   <tbody>
     <tr>
-        <td colspan="3"><center>No exiaten ventas pendientes de validación</center></td>
+        <td colspan="3"><center>No existen ventas pendientes de validación</center></td>
     </tr>
     
 </tbody>

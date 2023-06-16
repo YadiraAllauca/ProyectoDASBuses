@@ -47,27 +47,23 @@ if (isset($_POST['login'])) {
     <footer class="footerStyle">
         <p>
             <br>
-            <b>______________________________________</b>
             <a href="">
                 <img src="img/mail.png" class="socialnetwork">
             </a>
-            <b>_</b>
             <a href="">
                 <img src="img/instagram.png" class="socialnetwork">
             </a>
-            <b>_</b>
             <a href="">
                 <img src="img/twitter.png" class="socialnetwork">
             </a>
-            <b>_</b>
             <a href="">
                 <img src="img/facebook.png" class="socialnetwork">
             </a>
-            <b>______________________________________</b>
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="index.php" style="color:white">Inicio</a> | <a href="" style="color:white">Acerca de</a></b>
+            <b><a href="redireccionoficinista.php?action=home" style="color:white">Inicio</a> | <a href=""
+                    style="color:white">Acerca de</a></b>
         </p>
     </footer>
 </body>
