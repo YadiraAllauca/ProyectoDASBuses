@@ -54,7 +54,7 @@
                     </ul>
                     <a class="navbar-brand" href="redireccionoficinista.php?action=home" style="justify-content:right">
                     <img src="img/avatar.png" class="avatar"> </a>
-                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
+                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Cerrar Sesión</button>
             </div>
         </nav>
     </div>
@@ -67,13 +67,13 @@
                     </li>                
                     <li class="nav-item">
                         <a class="nav-link active; navTemplate"
-                            href="redireccionoficinista.php?action=frequencies">Frequencies</a>
+                            href="redireccionoficinista.php?action=frequencies">Frecuencias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; navTemplate" href="redireccionoficinista.php?action=sales">Sales</a>
+                        <a class="nav-link active; navTemplate" href="redireccionoficinista.php?action=sales">Ventas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active; navTemplate" href="redireccionoficinista.php?action=validation">Validation</a>
+                        <a class="nav-link active; navTemplate" href="redireccionoficinista.php?action=validation">Validacion Ventas Online</a>
                     </li>
                 </ul>
                 
