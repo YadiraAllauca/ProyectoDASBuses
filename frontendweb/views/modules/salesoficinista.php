@@ -2,14 +2,14 @@
 <table class="table table-striped">
 <thead>
 <tr>
-    <th scope="col">Frequency</th>
-    <th scope="col">Departure Time</th>
-    <th scope="col">Actions</th>
+    <th scope="col">Frecuencia</th>
+    <th scope="col">Hora de Salida</th>
+    <th scope="col">Acciones</th>
 </tr>
 </thead>
   <tbody>
     <tr>
-        <td colspan="3"><center>No frequencies avaliable</center></td>
+        <td colspan="3"><center>No existen frecuencias registradas</center></td>
     </tr>
     
 </tbody>
