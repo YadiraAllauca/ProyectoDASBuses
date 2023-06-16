@@ -2,14 +2,14 @@
 <table class="table table-striped">
 <thead>
 <tr>
-    <th scope="col">Order Number</th>
-    <th scope="col">Status</th>
-    <th scope="col">Actions</th>
+    <th scope="col">Numero de orden</th>
+    <th scope="col">Estado</th>
+    <th scope="col">Acciones</th>
 </tr>
 </thead>
   <tbody>
     <tr>
-        <td colspan="3"><center>No sales pending validation</center></td>
+        <td colspan="3"><center>No exiaten ventas pendientes de validación</center></td>
     </tr>
     
 </tbody>
