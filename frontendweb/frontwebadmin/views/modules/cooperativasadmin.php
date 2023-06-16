@@ -1,4 +1,5 @@
 <body>
+
     <div class="indexStyleTitulo">
         <br>
         <p class="tituloBienvenida">Welcome to <img class="iconos" src="img/safey.jpg">Plataform</p>
@@ -18,14 +19,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>
-                            <img class="iconos" src="img/editar.png">
-                            <img class="iconos" src="img/borrar.png">
-                        </td>
-                    </tr>
+
+                    <?php
+                    $url = 'https://nilotic-quart.000webhostapp.com/listarCooperativas.php';
+
+                    $ch = curl_init($url);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                    $response = curl_exec($ch);
+
+                    if ($response !== false) {
+                        $data = json_decode($response, true);
+
+                        if (!empty($data)) {
+                            foreach ($data as $cooperativa) {
+                                echo '<tr>';
+                                echo '<td>' . $cooperativa['nombre_cooperativa'] . '</td>';
+                                echo '<td>' . $cooperativa['cantidad_buses'] . '</td>';
+                                echo '<td>';
+                                echo '<img class="iconos" src="img/frecuencias.png">';
+                                echo '<img class="iconos" src="img/editar.png">';
+                                echo '<img class="iconos" src="img/borrar.png">';
+                                echo '</td>';
+                                echo '</tr>';
+                            }
+                        } else {
+                            echo '<tr><td colspan="3">No se encontraron registros en la tabla</td></tr>';
+                        }
+                    } else {
+                        echo '<tr><td colspan="3">Error al obtener los datos</td></tr>';
+                    }
+
+                    curl_close($ch);
+                    ?>
                 </tbody>
             </table>
         </div>
