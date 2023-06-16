@@ -34,7 +34,7 @@ if(isset($_POST['envio'])){
             <div class="mb-3">
                 <img src="img/user.png">
                 <label for="usuario" class="form-label" style="font-weight:bold;">Usuario</label>
-                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario" required>
+                <input type="email" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario" required>
             </div>
             <div class="mb-3">
                 <img src="img/password.png">
@@ -69,7 +69,7 @@ if(isset($_POST['envio'])){
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="index.php" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
+            <b><a href="index.php" style="color:white">Inicio</a> | <a href="" style="color:white">Acerca de</a></b>
         </p>
     </footer>
 </body>
