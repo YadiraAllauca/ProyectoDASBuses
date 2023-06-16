@@ -3,7 +3,7 @@
         <br><br><br>
         <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
             <h3 style="font-size: 20px;">
-                <span style="display: inline-block; vertical-align: middle;">New Frequency</span>
+                <span style="display: inline-block; vertical-align: middle;">Nueva Frecuencia</span>
                 <a href="redireccionadmin.php?action=frecuenciasform">
                     <img class="iconos" src="img/mas.png">
                 </a>
@@ -11,15 +11,17 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Origin</th>
-                        <th scope="col">Destination</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Origen</th>
+                        <th scope="col">Destino</th>
+                        <th scope="col">Costo</th>
+                        <th scope="col">Duración</th>
+                        <th scope="col">Acciones </th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>

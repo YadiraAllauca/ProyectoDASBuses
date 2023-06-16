@@ -11,7 +11,7 @@ if(isset($_POST['envio'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFEY!- Login</title>
+    <title>SAFEY!- Iniciar Sesión</title>
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     
@@ -28,7 +28,7 @@ if(isset($_POST['envio'])){
     <div class="divFormulario">
         <form action="login.php" class="formularioLogin" method="POST">
             <div class="divTituloLogin">
-                <h3>Login</h3>
+                <h3>Iniciar Sesión</h3>
             </div>
             <br>
             <div class="mb-3">
@@ -69,7 +69,7 @@ if(isset($_POST['envio'])){
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="index.php" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
+            <b><a href="index.php" style="color:white">Inicio</a> | <a href="" style="color:white">Acerca de</a></b>
         </p>
     </footer>
 </body>

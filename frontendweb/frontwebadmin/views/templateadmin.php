@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFEY! - Home</title>
+    <title>SAFEY! - Inicio</title>
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
@@ -54,7 +54,7 @@
                     </ul>
                     <a class="navbar-brand" href="redireccionadmin.php?action=perfilusuario" style="justify-content:right">
                     <img src="img/avatar.png" class="avatar" onclick=animate> </a>
-                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Logout</button>
+                <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Cerrar Sesión</button>
             </div>
         </nav>
     </div>
@@ -63,11 +63,11 @@
             <div class="container-fluid">                
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active; navTemplate" href="redireccionadmin.php?action=cooperativas">Cooperatives</a>
+                        <a class="nav-link active; navTemplate" href="redireccionadmin.php?action=cooperativas">Cooperativas</a>
                     </li>                
                     <li class="nav-item">
                         <a class="nav-link active; navTemplate"
-                            href="redireccionadmin.php?action=frecuencias">Frequencies</a>
+                            href="redireccionadmin.php?action=frecuencias">Frecuencias</a>
                     </li>
                 </ul>
                 
@@ -105,8 +105,8 @@
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="redireccionadmin.php?action=home" style="color:white">Home</a> | <a href=""
-                    style="color:white">About</a></b>
+            <b><a href="redireccionadmin.php?action=home" style="color:white">Inicio</a> | <a href=""
+                    style="color:white">Acerca de</a></b>
         </p>
     </footer>
 </body>

@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFEY!- Login</title>
+    <title>SAFEY!- Iniciar Sesión</title>
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -30,7 +30,7 @@ if (isset($_POST['login'])) {
                     </li>
                 </ul>
                 <form action="login.php" method="POST">
-                    <button type="submit" class="btn btn-danger; buttonStyle" id="login">Log In</button>
+                    <button type="submit" class="btn btn-danger; buttonStyle" id="login">Iniciar Sesión</button>
                 </form>
             </div>
         </nav>
@@ -38,9 +38,9 @@ if (isset($_POST['login'])) {
 
     <div class="indexStyle">
         <br><br><br><br>
-        <p>Welcome to <img class="avatar" src="img/safey.jpg"></p>
+        <p>Bienvenido a <img class="avatar" src="img/safey.jpg"></p>
 
-        <p>With safety you can travel safely to all your favorite destinations!</p>
+        <p>¡Con SAFEY puedes viajar de manera segura a todos tus destinos favoritos!</p>
     </div>
 
 
@@ -67,7 +67,7 @@ if (isset($_POST['login'])) {
             <br>
             <b>Copyright © 2023 Safey</b>
             <br>
-            <b><a href="index.php" style="color:white">Home</a> | <a href="" style="color:white">About</a></b>
+            <b><a href="index.php" style="color:white">Inicio</a> | <a href="" style="color:white">Acerca de</a></b>
         </p>
     </footer>
 </body>

@@ -2,10 +2,10 @@
 
     <div class="indexStyleTitulo">
         <br>
-        <p class="tituloBienvenida">Welcome to <img class="iconos" src="img/safey.jpg">Plataform</p>
+        
         <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
             <h3 style="font-size: 20px;">
-                <span style="display: inline-block; vertical-align: middle;">New cooperative</span>
+                <span style="display: inline-block; vertical-align: middle;">Nueva Cooperativa</span>
                 <a href="redireccionadmin.php?action=cooperativasform">
                     <img class="iconos" src="img/mas.png">
                 </a>
@@ -13,9 +13,9 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Cooperatives</th>
-                        <th scope="col">Number of buses</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Cooperativas</th>
+                        <th scope="col">Número de buses</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>

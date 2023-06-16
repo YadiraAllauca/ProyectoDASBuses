@@ -42,14 +42,14 @@
     <div class="indexStyleTitulo">
         <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
             <h3 style="font-size: 20px; text-align: center;">
-                <span class="cooperative-info-title">CHANGE PASSWORD!</span>
+                <span class="cooperative-info-title">CAMBIAR CONTRASEÑA</span>
             </h3>
             <form style="max-width: 400px; margin: 0 auto;">
                 <div class="row mb-3">
-                    <label for="newPassword" class="col-sm-4 col-form-label">New Password:</label>
+                    <label for="newPassword" class="col-sm-4 col-form-label">Nueva Contraseña:</label>
                     <div class="col-sm-8">
                         <div class="input-group">
-                            <input type="password" class="form-control form-control-sm" id="newPassword" placeholder="Enter new password">
+                            <input type="password" class="form-control form-control-sm" id="newPassword" placeholder="Ingrese la nueva contraseña">
                             <button class="btn btn-outline-secondary" type="button" id="toggleNewPassword">
                                 <i class="fas fa-eye"></i>
                             </button>
@@ -57,10 +57,10 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="newPasswordAgain" class="col-sm-4 col-form-label">New Password Again:</label>
+                    <label for="newPasswordAgain" class="col-sm-4 col-form-label">Nueva Contraseña Nuevamente:</label>
                     <div class="col-sm-8">
                         <div class="input-group">
-                            <input type="password" class="form-control form-control-sm" id="newPasswordAgain" placeholder="Enter new password again">
+                            <input type="password" class="form-control form-control-sm" id="newPasswordAgain" placeholder="Ingrese la nueva contraseña nuevamente">
                             <button class="btn btn-outline-secondary" type="button" id="toggleNewPasswordAgain">
                                 <i class="fas fa-eye"></i>
                             </button>
@@ -68,10 +68,10 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="currentPassword" class="col-sm-4 col-form-label">Current Password:</label>
+                    <label for="currentPassword" class="col-sm-4 col-form-label">Contaseña Actual:</label>
                     <div class="col-sm-8">
                         <div class="input-group">
-                            <input type="password" class="form-control form-control-sm" id="currentPassword" placeholder="Enter current password">
+                            <input type="password" class="form-control form-control-sm" id="currentPassword" placeholder="Ingrese su contraseña actual">
                             <button class="btn btn-outline-secondary" type="button" id="toggleCurrentPassword">
                                 <i class="fas fa-eye"></i>
                             </button>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary" style="width: 120px;">Save</button>
+                    <button type="submit" class="btn btn-primary" style="width: 120px;">Guardar</button>
                 </div>
             </form>
 
@@ -95,7 +95,7 @@
                 </div>
                 <div class="modal-body text-center">
                     <i class="fas fa-check-circle fa-4x text-success"></i>
-                    <p class="mt-3">Saved successfully</p>
+                    <p class="mt-3">Guardado Exitosamente</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
