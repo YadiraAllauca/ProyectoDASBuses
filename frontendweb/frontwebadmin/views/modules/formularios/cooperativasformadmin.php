@@ -1,4 +1,14 @@
 <head>
+  <?php
+  error_reporting(E_ALL & ~E_NOTICE);
+  ini_set('display_errors', 0);
+
+  // Obtener los datos de la cooperativa si se reciben
+  $id_cooperativa = $_GET['id_cooperativa'];
+  $nombre_cooperativa = $_GET['nombre_cooperativa'];
+  $ruc_cooperativa = $_GET['ruc_cooperativa'];
+  $cantidad_buses = $_GET['cantidad_buses'];
+  ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -18,7 +28,9 @@
       });
     });
   </script>
+
 </head>
+
 
 <body>
   <div class="indexStyleTitulo">
@@ -27,16 +39,17 @@
         <span class="cooperative-info-title">COOPERATIVE INFO!</span>
       </h3>
       <form style="max-width: 400px; margin: 0 auto;" action="https://nilotic-quart.000webhostapp.com/agregarCooperativa.php" method="POST">
+        <input type="number" name="id_cooperativa" id="id_cooperativa" value="<?php echo $id_cooperativa; ?>" style="display: none;">
         <div class="row mb-3">
           <label for="nombre_cooperativa" class="col-sm-4 col-form-label">Cooperative:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control form-control-sm" id="nombre_cooperativa" name="nombre_cooperativa" placeholder="Enter cooperative name" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+            <input type="text" class="form-control form-control-sm" id="nombre_cooperativa" name="nombre_cooperativa" placeholder="Enter cooperative name" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;" value="<?php echo $nombre_cooperativa; ?>">
           </div>
         </div>
         <div class="row mb-3">
           <label for="ruc_cooperativa" class="col-sm-4 col-form-label">RUC:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control form-control-sm" id="ruc_cooperativa" name="ruc_cooperativa" placeholder="Enter RUC number" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+            <input type="text" class="form-control form-control-sm" id="ruc_cooperativa" name="ruc_cooperativa" placeholder="Enter RUC number" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;" value="<?php echo $ruc_cooperativa; ?>">
           </div>
         </div>
         <div class="row mb-3">
@@ -46,7 +59,9 @@
               <div class="input-group-prepend">
                 <button type="button" class="btn btn-primary" id="decrementBtn"><i class="fas fa-minus"></i></button>
               </div>
-              <input type="text" class="form-control form-control-sm small-input" id="cantidad_buses" name="cantidad_buses" placeholder="0" value="0">
+              <input type="text" class="form-control form-control-sm small-input" id="cantidad_buses" name="cantidad_buses" value="<?php echo isset($cantidad_buses) ? $cantidad_buses : '0'; ?>">
+
+
               <div class="input-group-append">
                 <button type="button" class="btn btn-primary" id="incrementBtn"><i class="fas fa-plus"></i></button>
               </div>
@@ -134,15 +149,17 @@
   <script>
     $(document).ready(function() {
       $("form").submit(function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Evitar que se envíe el formulario
 
         // Obtener los valores de los campos del formulario
+        var id_cooperativa = $("#id_cooperativa").val();
         var rucCooperativa = $("#ruc_cooperativa").val();
         var nombreCooperativa = $("#nombre_cooperativa").val();
         var cantidadBuses = $("#cantidad_buses").val();
 
         // Crear un objeto de datos para enviar al servicio
         var data = {
+          id_cooperativa: id_cooperativa,
           ruc_cooperativa: rucCooperativa,
           nombre_cooperativa: nombreCooperativa,
           cantidad_buses: cantidadBuses
@@ -164,6 +181,8 @@
             }
           },
           error: function(xhr, status, error) {
+            // Ocurrió un error durante la solicitud AJAX, puedes mostrar un mensaje de error aquí si lo deseas
+            // Por ejemplo:
             Swal.fire("Error", "An error occurred: " + error, "error");
           }
         });
