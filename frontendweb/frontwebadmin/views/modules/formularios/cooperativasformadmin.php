@@ -28,7 +28,31 @@
       });
     });
   </script>
-
+  <script>
+  function deleteFrecuenciaCooperativa(id_frecuencia_asignada, id_cooperativa_pertenece) {
+  $.ajax({
+    url: "https://nilotic-quart.000webhostapp.com/eliminarFrecuenciaCooperativa.php",
+    type: "POST",
+    data: {
+      id_frecuencia_asignada: id_frecuencia_asignada,
+      id_cooperativa_pertenece: id_cooperativa_pertenece
+    },
+    dataType: "json",
+    success: function(response) {
+      if (response.OK) {
+        console.log("ok");
+        //Swal.fire("Success", "Deleted successfully", "success");
+      } else {
+        console.log("mal"+ response.errorMsg, "error");
+        //Swal.fire("Error", "Failed to delete: " + response.errorMsg, "error");
+      }
+    },
+    error: function(xhr, status, error) {
+      Swal.fire("Error", "An error occurred: " + error, "error");
+    }
+  });
+}
+</script>
 </head>
 
 
