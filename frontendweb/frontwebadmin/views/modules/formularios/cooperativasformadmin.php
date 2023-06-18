@@ -55,7 +55,6 @@
 </script>
 </head>
 
-
 <body>
   <div class="indexStyleTitulo">
     <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
@@ -84,8 +83,6 @@
                 <button type="button" class="btn btn-primary" id="decrementBtn"><i class="fas fa-minus"></i></button>
               </div>
               <input type="text" class="form-control form-control-sm small-input" id="cantidad_buses" name="cantidad_buses" value="<?php echo isset($cantidad_buses) ? $cantidad_buses : '0'; ?>">
-
-
               <div class="input-group-append">
                 <button type="button" class="btn btn-primary" id="incrementBtn"><i class="fas fa-plus"></i></button>
               </div>
@@ -103,20 +100,67 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
                   <i class="fas fa-plus"></i>
                 </button>
-
               </div>
             </div>
           </div>
         </div>
+        <div>
+        <table id="frequencyTable" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Origin</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Duration</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php
+$url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaCooperativa.php';
+$data = array('id_cooperativa_pertenece' => $id_cooperativa);
 
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+$response = curl_exec($ch);
+
+if ($response !== false) {
+  $data = json_decode($response, true);
+
+  if (!empty($data)) {
+    foreach ($data as $frecuencia) {
+      echo '<tr>';
+      echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
+      echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
+      echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
+      echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
+      echo '<td>';
+      //echo '<img class="iconos" src="img/frecuencias.png">';
+      //echo '<img class="iconos" src="img/editar.png" onclick="editFrecuencia(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $frecuencia['origen_frecuencia'] . '\', \'' . $frecuencia['destino_frecuencia'] . '\', \'' . $frecuencia['costo_frecuencia'] . '\', \'' . $frecuencia['duracion_buses'] . '\')">';
+      echo '<img class="iconos" src="img/borrar.png" onclick="deleteFrecuenciaCooperativa(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $id_cooperativa . '\')">';
+      echo '</td>';
+      echo '</tr>';
+    }
+  } else {
+    echo '<tr><td colspan="4">No se encontraron registros en la tabla</td></tr>';
+  }
+} else {
+  echo '<tr><td colspan="4">Error al obtener los datos</td></tr>';
+}
+curl_close($ch);
+?>
+            </tbody>
+          </table>
+        </div>
         <div class="d-flex justify-content-between">
           <button type="submit" class="btn btn-primary" style="width: 45%;">Save</button>
           <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancel</button>
         </div>
       </form>
     </div>
-
   </div>
+
   <div class="modal fade" id="frequencyModal" tabindex="-1" aria-labelledby="frequencyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -125,6 +169,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <form id="myForm" action="https://nilotic-quart.000webhostapp.com/agregarFrecuenciasCooperativa.php" method="POST">
           <table id="frequencyTable" class="table table-striped">
             <thead>
               <tr>
@@ -135,20 +180,45 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>
-                  <input type="checkbox">
-                </td>
-              </tr>
+            <?php
+            $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaNoCooperativa.php';
+            $data = array('id_cooperativa_pertenece' => $id_cooperativa);
+
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+            $response = curl_exec($ch);
+
+            if ($response !== false) {
+              $data = json_decode($response, true);
+
+              if (!empty($data)) {
+                foreach ($data as $frecuencia) {
+                  echo '<tr>';
+                  echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
+                  echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
+                  echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
+                  echo '<td>';
+                  echo '<input type="checkbox" name="id_frecuencia_asignada" id="id_frecuencia_asignada" value="' . $frecuencia['id_frecuencia'] . '">';
+                  echo '</td>';
+                  echo '</tr>';
+                }
+              } else {
+                echo '<tr><td colspan="3">No se encontraron registros en la tabla</td></tr>';
+              }
+            } else {
+              echo '<tr><td colspan="3">Error al obtener los datos</td></tr>';
+            }
+            curl_close($ch);
+            ?>
             </tbody>
           </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Save</button>
-          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </form>
         </div>
       </div>
     </div>
@@ -157,7 +227,6 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
@@ -171,6 +240,45 @@
     </div>
   </div>
   <script>
+    $(document).ready(function() {
+  $('#myForm').submit(function(event) {
+    event.preventDefault();
+        
+    var id_cooperativa_pertenece = $("#id_cooperativa").val();
+
+    var checkboxes = document.querySelectorAll('input[name="id_frecuencia_asignada"]:checked');
+
+    for (var i = 0; i < checkboxes.length; i++) {
+      var id_frecuencia_asignada = checkboxes[i].value;
+
+      var data_2 = {
+        id_cooperativa_pertenece: id_cooperativa_pertenece,
+        id_frecuencia_asignada: id_frecuencia_asignada
+      };
+
+      $.ajax({
+        url: "https://nilotic-quart.000webhostapp.com/asignarFrecuenciaCooperativa.php",
+        type: "POST",
+        data: data_2,
+        dataType: "json",
+        success: function(response) {
+          if (response.OK) {
+            Swal.fire("Success", "Saved successfully", "success");
+          } else {
+            Swal.fire("Error", "Failed to save: " + response.errorMsg, "error");
+          }
+        },
+        error: function(xhr, status, error) {
+          Swal.fire("Error", "An error occurred: " + error, "error");
+        },
+        complete: function() {
+          $('#myModal').modal('hide'); // Cerrar el modal después de completar la acción
+        }
+      });
+    }
+  });
+});
+
     $(document).ready(function() {
       $("form").submit(function(event) {
         event.preventDefault(); // Evitar que se envíe el formulario
@@ -212,7 +320,6 @@
         });
       });
     });
-
 
     // Obtener el elemento del campo de entrada y los botones de incremento y decremento
     var numBusesInput = document.getElementById('cantidad_buses');
