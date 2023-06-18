@@ -8,7 +8,7 @@ include 'conexionBDRemota.php';
 
 $id_cooperativa_pertenece = $_POST['id_cooperativa_pertenece'];
 
-$sql = "SELECT * FROM Frecuencias WHERE id_frecuencia IN(SELECT id_frecuencia_asignada FROM Frecuencias_Cooperativas WHERE id_cooperativa_pertenece!='$id_cooperativa_pertenece')";
+$sql = "SELECT * FROM Frecuencias WHERE id_frecuencia IN(SELECT id_frecuencia_asignada FROM Frecuencias_Cooperativas WHERE id_cooperativa_pertenece IS NOT '$id_cooperativa_pertenece')";
 
 $resultado = $conexion->query($sql);
 
