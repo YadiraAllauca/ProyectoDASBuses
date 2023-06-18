@@ -9,6 +9,9 @@
     background-color: #5b10c1;
     text-align: center;
     color: white;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
 
 .headerStyle {
