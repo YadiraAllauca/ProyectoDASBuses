@@ -31,7 +31,6 @@
 
 </head>
 
-
 <body>
   <div class="indexStyleTitulo">
     <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
@@ -60,8 +59,6 @@
                 <button type="button" class="btn btn-primary" id="decrementBtn"><i class="fas fa-minus"></i></button>
               </div>
               <input type="text" class="form-control form-control-sm small-input" id="cantidad_buses" name="cantidad_buses" value="<?php echo isset($cantidad_buses) ? $cantidad_buses : '0'; ?>">
-
-
               <div class="input-group-append">
                 <button type="button" class="btn btn-primary" id="incrementBtn"><i class="fas fa-plus"></i></button>
               </div>
@@ -79,12 +76,57 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
                   <i class="fas fa-plus"></i>
                 </button>
-
               </div>
             </div>
           </div>
         </div>
+        <div>
+          <table id="frequencyTable" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Origin</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Duration</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaCooperativa.php';
+                $data = array('id_cooperativa_pertenece' => $id_cooperativa);
 
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+                $response = curl_exec($ch);
+
+                if ($response !== false) {
+                  $data = json_decode($response, true);
+
+                  if (!empty($data)) {
+                    foreach ($data as $frecuencia) {
+                      echo '<tr>';
+                      echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
+                      echo '<td>';
+                      echo '<img class="iconos" src="img/borrar.png">';
+                      echo '</td>';
+                      echo '</tr>';
+                    }
+                  } else {
+                    echo '<tr><td colspan="3">No se encontraron registros en la tabla</td></tr>';
+                  }
+                } else {
+                  echo '<tr><td colspan="3">Error al obtener los datos</td></tr>';
+                }
+                curl_close($ch);
+              ?>
+            </tbody>
+          </table>
+        </div>
         <div class="d-flex justify-content-between">
           <button type="submit" class="btn btn-primary" style="width: 45%;">Save</button>
           <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancel</button>
