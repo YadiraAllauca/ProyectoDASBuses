@@ -29,30 +29,30 @@
     });
   </script>
   <script>
-  function deleteFrecuenciaCooperativa(id_frecuencia_asignada, id_cooperativa_pertenece) {
-  $.ajax({
-    url: "https://nilotic-quart.000webhostapp.com/eliminarFrecuenciaCooperativa.php",
-    type: "POST",
-    data: {
-      id_frecuencia_asignada: id_frecuencia_asignada,
-      id_cooperativa_pertenece: id_cooperativa_pertenece
-    },
-    dataType: "json",
-    success: function(response) {
-      if (response.OK) {
-        console.log("ok");
-        //Swal.fire("Success", "Deleted successfully", "success");
-      } else {
-        console.log("mal"+ response.errorMsg, "error");
-        //Swal.fire("Error", "Failed to delete: " + response.errorMsg, "error");
-      }
-    },
-    error: function(xhr, status, error) {
-      Swal.fire("Error", "An error occurred: " + error, "error");
+    function deleteFrecuenciaCooperativa(id_frecuencia_asignada, id_cooperativa_pertenece) {
+      $.ajax({
+        url: "https://nilotic-quart.000webhostapp.com/eliminarFrecuenciaCooperativa.php",
+        type: "POST",
+        data: {
+          id_frecuencia_asignada: id_frecuencia_asignada,
+          id_cooperativa_pertenece: id_cooperativa_pertenece
+        },
+        dataType: "json",
+        success: function(response) {
+          if (response.OK) {
+            console.log("ok");
+            //Swal.fire("Success", "Deleted successfully", "success");
+          } else {
+            console.log("mal"+ response.errorMsg, "error");
+            //Swal.fire("Error", "Failed to delete: " + response.errorMsg, "error");
+          }
+        },
+        error: function(xhr, status, error) {
+          Swal.fire("Error", "An error occurred: " + error, "error");
+        }
+      });
     }
-  });
-}
-</script>
+  </script>
 </head>
 
 <body>
@@ -115,41 +115,41 @@
               </tr>
             </thead>
             <tbody>
-            <?php
-$url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaCooperativa.php';
-$data = array('id_cooperativa_pertenece' => $id_cooperativa);
+              <?php
+                $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaCooperativa.php';
+                $data = array('id_cooperativa_pertenece' => $id_cooperativa);
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
-$response = curl_exec($ch);
+                $response = curl_exec($ch);
 
-if ($response !== false) {
-  $data = json_decode($response, true);
+                if ($response !== false) {
+                  $data = json_decode($response, true);
 
-  if (!empty($data)) {
-    foreach ($data as $frecuencia) {
-      echo '<tr>';
-      echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
-      echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
-      echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
-      echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
-      echo '<td>';
-      //echo '<img class="iconos" src="img/frecuencias.png">';
-      //echo '<img class="iconos" src="img/editar.png" onclick="editFrecuencia(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $frecuencia['origen_frecuencia'] . '\', \'' . $frecuencia['destino_frecuencia'] . '\', \'' . $frecuencia['costo_frecuencia'] . '\', \'' . $frecuencia['duracion_buses'] . '\')">';
-      echo '<img class="iconos" src="img/borrar.png" onclick="deleteFrecuenciaCooperativa(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $id_cooperativa . '\')">';
-      echo '</td>';
-      echo '</tr>';
-    }
-  } else {
-    echo '<tr><td colspan="4">No se encontraron registros en la tabla</td></tr>';
-  }
-} else {
-  echo '<tr><td colspan="4">Error al obtener los datos</td></tr>';
-}
-curl_close($ch);
-?>
+                  if (!empty($data)) {
+                    foreach ($data as $frecuencia) {
+                      echo '<tr>';
+                      echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
+                      echo '<td>';
+                      //echo '<img class="iconos" src="img/frecuencias.png">';
+                      //echo '<img class="iconos" src="img/editar.png" onclick="editFrecuencia(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $frecuencia['origen_frecuencia'] . '\', \'' . $frecuencia['destino_frecuencia'] . '\', \'' . $frecuencia['costo_frecuencia'] . '\', \'' . $frecuencia['duracion_buses'] . '\')">';
+                      echo '<img class="iconos" src="img/borrar.png" onclick="deleteFrecuenciaCooperativa(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $id_cooperativa . '\')">';
+                      echo '</td>';
+                      echo '</tr>';
+                    }
+                  } else {
+                    echo '<tr><td colspan="4">No se encontraron registros en la tabla</td></tr>';
+                  }
+                } else {
+                  echo '<tr><td colspan="4">Error al obtener los datos</td></tr>';
+                }
+                curl_close($ch);
+              ?>
             </tbody>
           </table>
         </div>
@@ -180,38 +180,38 @@ curl_close($ch);
               </tr>
             </thead>
             <tbody>
-            <?php
-            $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaNoCooperativa.php';
-            $data = array('id_cooperativa_pertenece' => $id_cooperativa);
+              <?php
+                $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaNoCooperativa.php';
+                $data = array('id_cooperativa_pertenece' => $id_cooperativa);
 
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                $ch = curl_init($url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
-            $response = curl_exec($ch);
+                $response = curl_exec($ch);
 
-            if ($response !== false) {
-              $data = json_decode($response, true);
+                if ($response !== false) {
+                  $data = json_decode($response, true);
 
-              if (!empty($data)) {
-                foreach ($data as $frecuencia) {
-                  echo '<tr>';
-                  echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
-                  echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
-                  echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
-                  echo '<td>';
-                  echo '<input type="checkbox" name="id_frecuencia_asignada" id="id_frecuencia_asignada" value="' . $frecuencia['id_frecuencia'] . '">';
-                  echo '</td>';
-                  echo '</tr>';
+                  if (!empty($data)) {
+                    foreach ($data as $frecuencia) {
+                      echo '<tr>';
+                      echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
+                      echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
+                      echo '<td>';
+                      echo '<input type="checkbox" name="id_frecuencia_asignada" id="id_frecuencia_asignada" value="' . $frecuencia['id_frecuencia'] . '">';
+                      echo '</td>';
+                      echo '</tr>';
+                    }
+                  } else {
+                    echo '<tr><td colspan="3">No se encontraron registros en la tabla</td></tr>';
+                  }
+                } else {
+                  echo '<tr><td colspan="3">Error al obtener los datos</td></tr>';
                 }
-              } else {
-                echo '<tr><td colspan="3">No se encontraron registros en la tabla</td></tr>';
-              }
-            } else {
-              echo '<tr><td colspan="3">Error al obtener los datos</td></tr>';
-            }
-            curl_close($ch);
-            ?>
+                curl_close($ch);
+              ?>
             </tbody>
           </table>
           <div class="modal-footer">
@@ -241,43 +241,42 @@ curl_close($ch);
   </div>
   <script>
     $(document).ready(function() {
-  $('#myForm').submit(function(event) {
-    event.preventDefault();
-        
-    var id_cooperativa_pertenece = $("#id_cooperativa").val();
+      $('#myForm').submit(function(event) {
+        event.preventDefault();
+            
+        var id_cooperativa_pertenece = $("#id_cooperativa").val();
 
-    var checkboxes = document.querySelectorAll('input[name="id_frecuencia_asignada"]:checked');
+        var checkboxes = document.querySelectorAll('input[name="id_frecuencia_asignada"]:checked');
 
-    for (var i = 0; i < checkboxes.length; i++) {
-      var id_frecuencia_asignada = checkboxes[i].value;
+        for (var i = 0; i < checkboxes.length; i++) {
+          var id_frecuencia_asignada = checkboxes[i].value;
+          var data_2 = {
+            id_cooperativa_pertenece: id_cooperativa_pertenece,
+            id_frecuencia_asignada: id_frecuencia_asignada
+          };
 
-      var data_2 = {
-        id_cooperativa_pertenece: id_cooperativa_pertenece,
-        id_frecuencia_asignada: id_frecuencia_asignada
-      };
-
-      $.ajax({
-        url: "https://nilotic-quart.000webhostapp.com/asignarFrecuenciaCooperativa.php",
-        type: "POST",
-        data: data_2,
-        dataType: "json",
-        success: function(response) {
-          if (response.OK) {
-            Swal.fire("Success", "Saved successfully", "success");
-          } else {
-            Swal.fire("Error", "Failed to save: " + response.errorMsg, "error");
-          }
-        },
-        error: function(xhr, status, error) {
-          Swal.fire("Error", "An error occurred: " + error, "error");
-        },
-        complete: function() {
-          $('#myModal').modal('hide'); // Cerrar el modal después de completar la acción
+          $.ajax({
+            url: "https://nilotic-quart.000webhostapp.com/asignarFrecuenciaCooperativa.php",
+            type: "POST",
+            data: data_2,
+            dataType: "json",
+            success: function(response) {
+              if (response.OK) {
+                Swal.fire("Success", "Saved successfully", "success");
+              } else {
+                Swal.fire("Error", "Failed to save: " + response.errorMsg, "error");
+              }
+            },
+            error: function(xhr, status, error) {
+              Swal.fire("Error", "An error occurred: " + error, "error");
+            },
+            complete: function() {
+              $('#myModal').modal('hide'); // Cerrar el modal después de completar la acción
+            }
+          });
         }
       });
-    }
-  });
-});
+    });
 
     $(document).ready(function() {
       $("form").submit(function(event) {
