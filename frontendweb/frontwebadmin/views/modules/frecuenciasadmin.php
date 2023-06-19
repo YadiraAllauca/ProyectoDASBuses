@@ -2,42 +2,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <script>
-        $(document).ready(function() {
-            // Realizar la solicitud AJAX al servicio
-            $.ajax({
-                url: 'https://nilotic-quart.000webhostapp.com/listarFrecuencias.php',
-                type: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    // Manipular los datos y agregarlos al combobox de origen
-                    var origenSelect = $('#origin');
-                    $.each(data, function(index, item) {
-                        var option = $('<option>').val(item.origen_frecuencia).text(item.origen_frecuencia);
-                        origenSelect.append(option);
-                    });
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Mapeo de ID a nombre de ciudad
+        var cityMap = {
+            1: 'Cuenca',
+            2: 'Guaranda',
+            3: 'Azogues',
+            4: 'Tulcán',
+            5: 'Riobamba',
+            6: 'Latacunga',
+            7: 'Machala',
+            8: 'Esmeraldas',
+            9: 'Guayaquil',
+            10: 'Ibarra',
+            11: 'Loja',
+            12: 'Babahoyo',
+            13: 'Portoviejo',
+            14: 'Macas',
+            15: 'Tena',
+            16: 'Orellana',
+            17: 'Puyo',
+            18: 'Quito',
+            19: 'Santa Elena',
+            20: 'Santo Domingo',
+            21: 'Nueva Loja',
+            22: 'Ambato',
+            23: 'Zamora',
+            24: 'Salcedo',
+            25: 'La Maná'
+        };
 
-                    // Manipular los datos y agregarlos al combobox de destino
-                    var destinoSelect = $('#destination');
-                    $.each(data, function(index, item) {
-                        var option = $('<option>').val(item.destino_frecuencia).text(item.destino_frecuencia);
-                        destinoSelect.append(option);
-                    });
-                },
-                error: function() {
-                    console.log('Error al cargar los datos');
-                }
-            });
+        // Realizar la solicitud AJAX al servicio
+        $.ajax({
+            url: 'https://nilotic-quart.000webhostapp.com/listarFrecuencias.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Manipular los datos y agregar los nombres de ciudad al combobox de origen
+                var origenSelect = $('#origin');
+                $.each(data, function(index, item) {
+                    var cityName = cityMap[item.origen_frecuencia];
+                    var option = $('<option>').val(item.origen_frecuencia).text(cityName);
+                    origenSelect.append(option);
+                });
 
-            $("form").submit(function(event) {
-                event.preventDefault(); // Evitar que se envíe el formulario
-
-                // Mostrar ventana emergente con mensaje y icono
-                $('#successModal').modal('show');
-            });
+                // Manipular los datos y agregar los nombres de ciudad al combobox de destino
+                var destinoSelect = $('#destination');
+                $.each(data, function(index, item) {
+                    var cityName = cityMap[item.destino_frecuencia];
+                    var option = $('<option>').val(item.destino_frecuencia).text(cityName);
+                    destinoSelect.append(option);
+                });
+            },
+            error: function() {
+                console.log('Error al cargar los datos');
+            }
         });
-    </script>
+
+        $("form").submit(function(event) {
+            event.preventDefault(); // Evitar que se envíe el formulario
+
+            // Mostrar ventana emergente con mensaje y icono
+            $('#successModal').modal('show');
+        });
+    });
+</script>
+
 </head>
 
 <body>
