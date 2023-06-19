@@ -29,6 +29,46 @@
     });
   </script>
   <script>
+    // Mapeo de ID a nombre de ciudad
+    var cityMap = {
+      1: 'Cuenca',
+      2: 'Guaranda',
+      3: 'Azogues',
+      4: 'Tulcán',
+      5: 'Riobamba',
+      6: 'Latacunga',
+      7: 'Machala',
+      8: 'Esmeraldas',
+      9: 'Guayaquil',
+      10: 'Ibarra',
+      11: 'Loja',
+      12: 'Babahoyo',
+      13: 'Portoviejo',
+      14: 'Macas',
+      15: 'Tena',
+      16: 'Orellana',
+      17: 'Puyo',
+      18: 'Quito',
+      19: 'Santa Elena',
+      20: 'Santo Domingo',
+      21: 'Nueva Loja',
+      22: 'Ambato',
+      23: 'Zamora',
+      24: 'Salcedo',
+      25: 'La Maná'
+    };
+
+    $(document).ready(function() {
+      var cities = $('.city');
+
+      cities.each(function() {
+        var cityId = $(this).data('id');
+        var cityName = cityMap[cityId];
+        $(this).text(cityName);
+      });
+    });
+  </script>
+  <script>
     function deleteFrecuenciaCooperativa(id_frecuencia_asignada, id_cooperativa_pertenece) {
       $.ajax({
         url: "https://nilotic-quart.000webhostapp.com/eliminarFrecuenciaCooperativa.php",
@@ -43,7 +83,7 @@
             console.log("ok");
             //Swal.fire("Success", "Deleted successfully", "success");
           } else {
-            console.log("mal"+ response.errorMsg, "error");
+            console.log("mal" + response.errorMsg, "error");
             //Swal.fire("Error", "Failed to delete: " + response.errorMsg, "error");
           }
         },
@@ -59,24 +99,24 @@
   <div class="indexStyleTitulo">
     <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
       <h3 style="font-size: 20px; text-align: center;">
-        <span class="cooperative-info-title">COOPERATIVE INFO!</span>
+        <span class="cooperative-info-title">INFORMACIÓN DE LA COOPERATIVA</span>
       </h3>
       <form style="max-width: 400px; margin: 0 auto;" action="https://nilotic-quart.000webhostapp.com/agregarCooperativa.php" method="POST">
         <input type="number" name="id_cooperativa" id="id_cooperativa" value="<?php echo $id_cooperativa; ?>" style="display: none;">
         <div class="row mb-3">
-          <label for="nombre_cooperativa" class="col-sm-4 col-form-label">Cooperative:</label>
+          <label for="nombre_cooperativa" class="col-sm-4 col-form-label">Cooperativa:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control form-control-sm" id="nombre_cooperativa" name="nombre_cooperativa" placeholder="Enter cooperative name" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;" value="<?php echo $nombre_cooperativa; ?>">
+            <input type="text" class="form-control form-control-sm" id="nombre_cooperativa" name="nombre_cooperativa" placeholder="Ingrese el nombre de la cooperativa" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;" value="<?php echo $nombre_cooperativa; ?>">
           </div>
         </div>
         <div class="row mb-3">
           <label for="ruc_cooperativa" class="col-sm-4 col-form-label">RUC:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control form-control-sm" id="ruc_cooperativa" name="ruc_cooperativa" placeholder="Enter RUC number" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;" value="<?php echo $ruc_cooperativa; ?>">
+            <input type="text" class="form-control form-control-sm" id="ruc_cooperativa" name="ruc_cooperativa" placeholder="Ingrese el número de RUC" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;" value="<?php echo $ruc_cooperativa; ?>">
           </div>
         </div>
         <div class="row mb-3">
-          <label for="cantidad_buses" class="col-sm-4 col-form-label">Number of Buses:</label>
+          <label for="cantidad_buses" class="col-sm-4 col-form-label">Numero de buses:</label>
           <div class="col-sm-8">
             <div class="input-group">
               <div class="input-group-prepend">
@@ -90,11 +130,11 @@
           </div>
         </div>
         <div class="row mb-3">
-          <label for="frecuencia" class="col-sm-4 col-form-label">Frequency:</label>
+          <label for="frecuencia" class="col-sm-4 col-form-label">Frequencias:</label>
           <div class="col-sm-8">
             <div class="input-group">
               <span class="form-control form-control-sm" style="background-color: #fff; border: none; height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
-                Add Frequency
+                Agregar Frecuencia
               </span>
               <div class="input-group-append">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
@@ -105,57 +145,58 @@
           </div>
         </div>
         <div>
-        <table id="frequencyTable" class="table table-striped">
+          <table id="frequencyTable" class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Origin</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Duration</th>
+                <th scope="col">Origen</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Duración</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <?php
-                $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaCooperativa.php';
-                $data = array('id_cooperativa_pertenece' => $id_cooperativa);
+              $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaCooperativa.php';
+              $data = array('id_cooperativa_pertenece' => $id_cooperativa);
 
-                $ch = curl_init($url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+              $ch = curl_init($url);
+              curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+              curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
-                $response = curl_exec($ch);
+              $response = curl_exec($ch);
 
-                if ($response !== false) {
-                  $data = json_decode($response, true);
+              if ($response !== false) {
+                $data = json_decode($response, true);
 
-                  if (!empty($data)) {
-                    foreach ($data as $frecuencia) {
-                      echo '<tr>';
-                      echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
-                      echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
-                      echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
-                      echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
-                      echo '<td>';
-                      //echo '<img class="iconos" src="img/frecuencias.png">';
-                      //echo '<img class="iconos" src="img/editar.png" onclick="editFrecuencia(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $frecuencia['origen_frecuencia'] . '\', \'' . $frecuencia['destino_frecuencia'] . '\', \'' . $frecuencia['costo_frecuencia'] . '\', \'' . $frecuencia['duracion_buses'] . '\')">';
-                      echo '<img class="iconos" src="img/borrar.png" onclick="deleteFrecuenciaCooperativa(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $id_cooperativa . '\')">';
-                      echo '</td>';
-                      echo '</tr>';
-                    }
-                  } else {
-                    echo '<tr><td colspan="4">No se encontraron registros en la tabla</td></tr>';
+                if (!empty($data)) {
+                  foreach ($data as $frecuencia) {
+                    echo '<tr>';
+                    echo '<td data-id="' . $frecuencia['origen_frecuencia'] . '" class="city"></td>';
+                    echo '<td data-id="' . $frecuencia['destino_frecuencia'] . '" class="city"></td>';
+                    echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
+                    echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
+                    echo '<td>';
+                    //echo '<img class="iconos" src="img/frecuencias.png">';
+                    //echo '<img class="iconos" src="img/editar.png" onclick="editFrecuencia(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $frecuencia['origen_frecuencia'] . '\', \'' . $frecuencia['destino_frecuencia'] . '\', \'' . $frecuencia['costo_frecuencia'] . '\', \'' . $frecuencia['duracion_buses'] . '\')">';
+                    echo '<img class="iconos" src="img/borrar.png" onclick="deleteFrecuenciaCooperativa(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $id_cooperativa . '\')">';
+                    echo '</td>';
+                    echo '</tr>';
                   }
                 } else {
-                  echo '<tr><td colspan="4">Error al obtener los datos</td></tr>';
+                  echo '<tr><td colspan="4">No se encontraron registros en la tabla</td></tr>';
                 }
-                curl_close($ch);
+              } else {
+                echo '<tr><td colspan="4">Error al obtener los datos</td></tr>';
+              }
+              curl_close($ch);
               ?>
             </tbody>
           </table>
         </div>
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary" style="width: 45%;">Save</button>
-          <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="width: 45%;">Guardar</button>
+          <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancelar</button>
         </div>
       </form>
     </div>
@@ -165,22 +206,23 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="frequencyModalLabel">Add Frequency</h5>
+          <h5 class="modal-title" id="frequencyModalLabel">Agregar Frecuencia</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form id="myForm" action="https://nilotic-quart.000webhostapp.com/agregarFrecuenciasCooperativa.php" method="POST">
-          <table id="frequencyTable" class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Origin</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Duration</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
+            <table id="frequencyTable" class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Origen</th>
+                  <th scope="col">Destino</th>
+                  <th scope="col">Costo</th>
+                  <th scope="col">Duración</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
                 $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuenciaNoCooperativa.php';
                 $data = array('id_cooperativa_pertenece' => $id_cooperativa);
 
@@ -196,8 +238,9 @@
                   if (!empty($data)) {
                     foreach ($data as $frecuencia) {
                       echo '<tr>';
-                      echo '<td>' . $frecuencia['origen_frecuencia'] . '</td>';
-                      echo '<td>' . $frecuencia['destino_frecuencia'] . '</td>';
+                      echo '<td data-id="' . $frecuencia['origen_frecuencia'] . '" class="city"></td>';
+                      echo '<td data-id="' . $frecuencia['destino_frecuencia'] . '" class="city"></td>';
+                      echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
                       echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
                       echo '<td>';
                       echo '<input type="checkbox" name="id_frecuencia_asignada" id="id_frecuencia_asignada" value="' . $frecuencia['id_frecuencia'] . '">';
@@ -211,14 +254,14 @@
                   echo '<tr><td colspan="3">Error al obtener los datos</td></tr>';
                 }
                 curl_close($ch);
-              ?>
-            </tbody>
-          </table>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </form>
+                ?>
+              </tbody>
+            </table>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -231,7 +274,7 @@
         </div>
         <div class="modal-body text-center">
           <i class="fas fa-check-circle fa-4x text-success"></i>
-          <p class="mt-3">Saved successfully</p>
+          <p class="mt-3">Guardo Exitosamente</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
@@ -243,7 +286,7 @@
     $(document).ready(function() {
       $('#myForm').submit(function(event) {
         event.preventDefault();
-            
+
         var id_cooperativa_pertenece = $("#id_cooperativa").val();
 
         var checkboxes = document.querySelectorAll('input[name="id_frecuencia_asignada"]:checked');
