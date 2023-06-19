@@ -50,7 +50,7 @@
                     <label for="origin" class="col-sm-4 col-form-label">Origen:</label>
                     <div class="col-sm-8">
                         <select class="form-control form-control-sm" id="origin" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
-                            <option value="">Elige una opción</option>
+                            <option value="">Escoja una opción</option>
                         </select>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <label for="destination" class="col-sm-4 col-form-label">Destino:</label>
                     <div class="col-sm-8">
                         <select class="form-control form-control-sm" id="destination" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
-                            <option value="">Elige una opción</option>
+                            <option value="">Escoja una opción</option>
                         </select>
                     </div>
                 </div>
@@ -77,53 +77,14 @@
                 </div>
 
                 <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary" style="width: 45%;">Save</button>
-                    <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="width: 45%;">Guardar</button>
+                    <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancelar</button>
                 </div>
             </form>
         </div>
 
     </div>
-    <div class="modal fade" id="frequencyModal" tabindex="-1" aria-labelledby="frequencyModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="frequencyModalLabel">Add Frequency</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <table id="frequencyTable" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Origin</th>
-                                <th scope="col">Destination</th>
-                                <th scope="col">Duration</th>
-                                <th scope="col">Cost</th>
-                                <th scope="col">State</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -134,10 +95,10 @@
                 </div>
                 <div class="modal-body text-center">
                     <i class="fas fa-check-circle fa-4x text-success"></i>
-                    <p class="mt-3">Saved successfully</p>
+                    <p class="mt-3">Guardado Exitosamente</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
                 </div>
             </div>
         </div>
