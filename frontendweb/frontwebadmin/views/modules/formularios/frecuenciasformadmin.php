@@ -1,118 +1,139 @@
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    function editarFrecuencia(id_frecuencia, origen_frecuencia, destino_frecuencia, costo_frecuencia, duracion_frecuencia) {
-      var encodedId = encodeURIComponent(id_frecuencia);
-      var encodedOrigen = encodeURIComponent(origen_frecuencia);
-      var encodedDestino = encodeURIComponent(destino_frecuencia);
-      var encodedCosto = encodeURIComponent(costo_frecuencia);
-      var encodedDuracion = encodeURIComponent(duracion_frecuencia);
-      var redirectUrl = 'redireccionadmin.php?action=frecuenciasform&id_frecuencia=' + encodedId +
-        '&origen_frecuencia=' + encodedOrigen +
-        '&destino_frecuencia=' + encodedDestino +
-        '&costo_frecuencia=' + encodedCosto+
-        '&duracion_frecuencia=' + encodedDuracion;
+    $(document).ready(function() {
+        // Mapeo de ID a nombre de ciudad
+        var cityMap = {
+            1: 'Cuenca',
+            2: 'Guaranda',
+            3: 'Azogues',
+            4: 'Tulcán',
+            5: 'Riobamba',
+            6: 'Latacunga',
+            7: 'Machala',
+            8: 'Esmeraldas',
+            9: 'Guayaquil',
+            10: 'Ibarra',
+            11: 'Loja',
+            12: 'Babahoyo',
+            13: 'Portoviejo',
+            14: 'Macas',
+            15: 'Tena',
+            16: 'Orellana',
+            17: 'Puyo',
+            18: 'Quito',
+            19: 'Santa Elena',
+            20: 'Santo Domingo',
+            21: 'Nueva Loja',
+            22: 'Ambato',
+            23: 'Zamora',
+            24: 'Salcedo',
+            25: 'La Maná'
+        };
 
-      window.location.href = redirectUrl;
-    }
-  </script>
+        // Realizar la solicitud AJAX al servicio
+        $.ajax({
+            url: 'https://nilotic-quart.000webhostapp.com/listarFrecuencias.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Manipular los datos y agregar los nombres de ciudad al combobox de origen
+                var origenSelect = $('#origin');
+                $.each(data, function(index, item) {
+                    var cityName = cityMap[item.origen_frecuencia];
+                    var option = $('<option>').val(item.origen_frecuencia).text(cityName);
+                    origenSelect.append(option);
+                });
+
+                // Manipular los datos y agregar los nombres de ciudad al combobox de destino
+                var destinoSelect = $('#destination');
+                $.each(data, function(index, item) {
+                    var cityName = cityMap[item.destino_frecuencia];
+                    var option = $('<option>').val(item.destino_frecuencia).text(cityName);
+                    destinoSelect.append(option);
+                });
+            },
+            error: function() {
+                console.log('Error al cargar los datos');
+            }
+        });
+
+        $("form").submit(function(event) {
+            event.preventDefault(); // Evitar que se envíe el formulario
+
+            // Mostrar ventana emergente con mensaje y icono
+            $('#successModal').modal('show');
+        });
+    });
+</script>
+
 </head>
+
 <body>
     <div class="indexStyleTitulo">
-        <br><br><br>
         <div style="padding-left: 30px; padding-right: 30px; padding-top: 15px;">
-            <h3 style="font-size: 20px;">
-                <span style="display: inline-block; vertical-align: middle;">Nueva Frecuencia</span>
-                <a href="redireccionadmin.php?action=frecuenciasform">
-                    <img class="iconos" src="img/mas.png">
-                </a>
+            <h3 style="font-size: 20px; text-align: center;">
+                <span class="cooperative-info-title">INFORMACIÓN DE LA FRECUENCIA</span></span>
             </h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Origen</th>
-                        <th scope="col">Destino</th>
-                        <th scope="col">Costo</th>
-                        <th scope="col">Duración</th>
-                        <th scope="col">Acciones </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $url = 'https://nilotic-quart.000webhostapp.com/listarFrecuencias.php';
+            <form style="max-width: 400px; margin: 0 auto;">
+                <div class="row mb-3">
+                    <label for="origin" class="col-sm-4 col-form-label">Origen:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="origin" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+                            <option value="">Escoja una opción</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="destination" class="col-sm-4 col-form-label">Destino:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control form-control-sm" id="destination" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+                            <option value="">Escoja una opción</option>
+                        </select>
+                    </div>
+                </div>
 
-                        $ch = curl_init($url);
-                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                <div class="row mb-3">
+                    <label for="cost" class="col-sm-4 col-form-label">Costo:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control form-control-sm" id="cost" placeholder="Ingrese el costo" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="duration" class="col-sm-4 col-form-label">Duración:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control form-control-sm" id="duration" placeholder="Ingrese la duración" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+                    </div>
+                </div>
 
-                        $response = curl_exec($ch);
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary" style="width: 45%;">Guardar</button>
+                    <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancelar</button>
+                </div>
+            </form>
+        </div>
 
-                        if ($response !== false) {
-                            $data = json_decode($response, true);
+    </div>
+    
 
-                            if (!empty($data)) {
-                                echo '<script>
-                                    var cityMap = {
-                                      1: "Cuenca",
-                                      2: "Guaranda",
-                                      3: "Azogues",
-                                      4: "Tulcán",
-                                      5: "Riobamba",
-                                      6: "Latacunga",
-                                      7: "Machala",
-                                      8: "Esmeraldas",
-                                      9: "Guayaquil",
-                                      10: "Ibarra",
-                                      11: "Loja",
-                                      12: "Babahoyo",
-                                      13: "Portoviejo",
-                                      14: "Macas",
-                                      15: "Tena",
-                                      16: "Orellana",
-                                      17: "Puyo",
-                                      18: "Quito",
-                                      19: "Santa Elena",
-                                      20: "Santo Domingo",
-                                      21: "Nueva Loja",
-                                      22: "Ambato",
-                                      23: "Zamora",
-                                      24: "Salcedo",
-                                      25: "La Maná"
-                                    };
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
 
-                                    $(document).ready(function() {
-                                      var cities = $(".city");
-
-                                      cities.each(function() {
-                                        var cityId = $(this).data("id");
-                                        var cityName = cityMap[cityId];
-                                        $(this).text(cityName);
-                                      });
-
-                        
-                                    });
-                                </script>';
-
-                                foreach ($data as $frecuencia) {
-                                    echo '<tr>';
-                                    echo '<td class="city" data-id="' . $frecuencia['origen_frecuencia'] . '"></td>';
-                                    echo '<td class="city" data-id="' . $frecuencia['destino_frecuencia'] . '"></td>';
-                                    echo '<td>' . $frecuencia['costo_frecuencia'] . '</td>';
-                                    echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
-                                    echo '<td>';
-                                    echo '<img class="iconos" src="img/editar.png" onclick="editarFrecuencia(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $frecuencia['origen_frecuencia'] . '\', \'' . $frecuencia['destino_frecuencia'] . '\', \'' . $frecuencia['costo_frecuencia'] . '\',\'' . $frecuencia['duracion_frecuencia'] . '\')">';
-                                    echo '<img class="iconos" src="img/borrar.png">';
-                                    echo '</td>';
-                                    echo '</tr>';
-                                }
-                            } else {
-                                echo '<tr><td colspan="5">No se encontraron registros en la tabla</td></tr>';
-                            }
-                        } else {
-                            echo '<tr><td colspan="5">Error al obtener los datos</td></tr>';
-                        }
-                        curl_close($ch);
-                    ?>
-                </tbody>
-            </table>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fas fa-check-circle fa-4x text-success"></i>
+                    <p class="mt-3">Guardado Exitosamente</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
