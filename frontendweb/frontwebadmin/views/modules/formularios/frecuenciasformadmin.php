@@ -100,6 +100,12 @@
       });
     });
   </script>
+  <script>
+    function redirectToFrecuencias() {
+      window.location.href = 'redireccionadmin.php?action=frecuencias';
+    }
+  </script>
+
 </head>
 
 <body>
@@ -140,9 +146,10 @@
           </div>
         </div>
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary" style="width: 45%;">Guardar</button>
-          <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancelar</button>
+          <button type="submit" class="btn btn-primary" style="width: 45%; "onclick="redirectToFrecuencias()">Guardar</button>
+          <button type="button" class="btn btn-outline-primary" style="width: 45%;" onclick="redirectToFrecuencias()">Cancelar</button>
         </div>
+
       </form>
     </div>
   </div>
