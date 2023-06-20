@@ -100,7 +100,6 @@
                 echo '<td>' . $frecuencia['duracion_frecuencia'] . '</td>';
                 echo '<td>';
                 echo '<img class="iconos" src="img/editar.png" onclick="editarFrecuencia(\'' . $frecuencia['id_frecuencia'] . '\', \'' . $frecuencia['origen_frecuencia'] . '\', \'' . $frecuencia['destino_frecuencia'] . '\', \'' . $frecuencia['costo_frecuencia'] . '\',\'' . $frecuencia['duracion_frecuencia'] . '\')">';
-                echo '<img class="iconos" src="img/borrar.png">';
                 echo '</td>';
                 echo '</tr>';
               }
