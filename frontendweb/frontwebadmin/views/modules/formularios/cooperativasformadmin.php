@@ -129,7 +129,7 @@
             </div>
           </div>
         </div>
-        <div class="row mb-3">
+        <div class="row mb-3" <?php if (empty($id_cooperativa)) echo 'style="display: none;"'; ?>>
           <label for="frecuencia" class="col-sm-4 col-form-label">Frequencias:</label>
           <div class="col-sm-8">
             <div class="input-group">
@@ -144,7 +144,7 @@
             </div>
           </div>
         </div>
-        <div>
+        <div <?php if (empty($id_cooperativa)) echo 'style="display: none;"'; ?>>
           <table id="frequencyTable" class="table table-striped">
             <thead>
               <tr>
