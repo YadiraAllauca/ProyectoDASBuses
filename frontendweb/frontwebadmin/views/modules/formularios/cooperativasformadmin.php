@@ -93,6 +93,12 @@
       });
     }
   </script>
+  <script>
+    function redirectToCooperativas() {
+      window.location.href = 'redireccionadmin.php?action=cooperativas';
+    }
+  </script>
+  
 </head>
 
 <body>
@@ -195,8 +201,8 @@
           </table>
         </div>
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary" style="width: 45%;">Guardar</button>
-          <button type="button" class="btn btn-outline-primary" style="width: 45%;">Cancelar</button>
+          <button type="submit" class="btn btn-primary" style="width: 45%;"onclick="redirectToCooperativas()">Guardar</button>
+          <button type="button" class="btn btn-outline-primary" style="width: 45%;"onclick="redirectToCooperativas()">Cancelar</button>
         </div>
       </form>
     </div>
