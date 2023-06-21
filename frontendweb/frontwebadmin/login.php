@@ -34,7 +34,7 @@ if(isset($_POST['envio'])){
             <div class="mb-3">
                 <img src="img/user.png">
                 <label for="usuario" class="form-label" style="font-weight:bold;">Usuario</label>
-                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario" required>
+                <input type="email" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario" required>
             </div>
             <div class="mb-3">
                 <img src="img/password.png">
