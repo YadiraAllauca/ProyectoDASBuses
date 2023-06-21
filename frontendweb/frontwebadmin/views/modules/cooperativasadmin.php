@@ -30,6 +30,7 @@
           <tr>
             <th scope="col">Cooperativas</th>
             <th scope="col">Número de buses</th>
+            <th scope="col">Estado</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
@@ -52,9 +53,10 @@
                 echo '<td>' . $cooperativa['nombre_cooperativa'] . '</td>';
                 echo '<td>' . $cooperativa['cantidad_buses'] . '</td>';
                 echo '<td>';
+                echo '<td>';
                 echo '<img class="iconos" src="img/frecuencias.png">';
                 echo '<img class="iconos" src="img/editar.png" onclick="editCooperativa(\'' . $cooperativa['id_cooperativa'] . '\', \'' . $cooperativa['nombre_cooperativa'] . '\', \'' . $cooperativa['ruc_cooperativa'] . '\', \'' . $cooperativa['cantidad_buses'] . '\')">';
-                echo '<img class="iconos" src="img/borrar.png">';
+                
                 echo '</td>';
                 echo '</tr>';
               }

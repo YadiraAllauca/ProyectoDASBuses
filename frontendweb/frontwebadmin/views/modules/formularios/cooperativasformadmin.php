@@ -98,7 +98,7 @@
       window.location.href = 'redireccionadmin.php?action=cooperativas';
     }
   </script>
-  
+
 </head>
 
 <body>
@@ -133,6 +133,16 @@
                 <button type="button" class="btn btn-primary" id="incrementBtn"><i class="fas fa-plus"></i></button>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="destino_frecuencia" class="col-sm-4 col-form-label">Estado:</label>
+          <div class="col-sm-8">
+            <select class="form-control form-control-sm city" id="destino_frecuencia" name="destino_frecuencia" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+              <option value="">Escoja una opción</option>
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
           </div>
         </div>
         <div class="row mb-3" <?php if (empty($id_cooperativa)) echo 'style="display: none;"'; ?>>
@@ -201,8 +211,8 @@
           </table>
         </div>
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary" style="width: 45%;"onclick="redirectToCooperativas()">Guardar</button>
-          <button type="button" class="btn btn-outline-primary" style="width: 45%;"onclick="redirectToCooperativas()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" style="width: 45%;" onclick="redirectToCooperativas()">Guardar</button>
+          <button type="button" class="btn btn-outline-primary" style="width: 45%;" onclick="redirectToCooperativas()">Cancelar</button>
         </div>
       </form>
     </div>
