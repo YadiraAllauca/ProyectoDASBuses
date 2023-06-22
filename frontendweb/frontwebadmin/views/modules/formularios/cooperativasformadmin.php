@@ -8,6 +8,7 @@
   $nombre_cooperativa = $_GET['nombre_cooperativa'];
   $ruc_cooperativa = $_GET['ruc_cooperativa'];
   $cantidad_buses = $_GET['cantidad_buses'];
+  $estado = $_GET['estado'];
   ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -141,11 +142,13 @@
               <div class="row mb-3">
                 <label for="destino_frecuencia" class="col-sm-4 col-form-label">Estado:</label>
                 <div class="col-sm-8">
-                  <select class="form-control form-control-sm city" id="destino_frecuencia" name="destino_frecuencia" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
-                    <option value="">Escoja una opción</option>
-                    <option value="activo">Activo</option>
-                    <option value="inactivo">Inactivo</option>
+                  <select class="form-control form-control-sm city" id="estado" name="estado" style="height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+                    <option value="Escoja una opción">Escoja una opción</option>
+                    <option value="activa" <?php if ($estado == 1) echo 'selected'; ?>>Activa</option>
+                    <option value="inactiva" <?php if ($estado == 0) echo 'selected'; ?>>Inactiva</option>
                   </select>
+
+
                 </div>
               </div>
               <div class="row mb-3" <?php if (empty($id_cooperativa)) echo 'style="display: none;"'; ?>>
@@ -357,13 +360,21 @@
         var rucCooperativa = $("#ruc_cooperativa").val();
         var nombreCooperativa = $("#nombre_cooperativa").val();
         var cantidadBuses = $("#cantidad_buses").val();
+        var estado = $("#estado").val();
+        
+        if (estado == "activa") {
+          estado = 1
+        } else {
+          estado = 0
+        }
 
         // Crear un objeto de datos para enviar al servicio
         var data = {
           id_cooperativa: id_cooperativa,
           ruc_cooperativa: rucCooperativa,
           nombre_cooperativa: nombreCooperativa,
-          cantidad_buses: cantidadBuses
+          cantidad_buses: cantidadBuses,
+          estado: estado
         };
 
         // Realizar la solicitud AJAX al servicio

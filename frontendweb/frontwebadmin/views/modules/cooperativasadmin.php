@@ -1,14 +1,16 @@
 <head>
   <script>
-    function editCooperativa(id_cooperativa, nombre_cooperativa, ruc_cooperativa, cantidad_buses) {
+    function editCooperativa(id_cooperativa, nombre_cooperativa, ruc_cooperativa, cantidad_buses, estado) {
       var encodedId = encodeURIComponent(id_cooperativa);
       var encodedNombre = encodeURIComponent(nombre_cooperativa);
       var encodedRUC = encodeURIComponent(ruc_cooperativa);
       var encodedCantidadBuses = encodeURIComponent(cantidad_buses);
+      var encodedEstado = encodeURIComponent(estado);
       var redirectUrl = 'redireccionadmin.php?action=cooperativasform&id_cooperativa=' + encodedId +
         '&nombre_cooperativa=' + encodedNombre +
         '&ruc_cooperativa=' + encodedRUC +
-        '&cantidad_buses=' + encodedCantidadBuses;
+        '&cantidad_buses=' + encodedCantidadBuses +
+        '&estado=' + encodedEstado;
 
       window.location.href = redirectUrl;
     }
@@ -31,7 +33,7 @@
             <th scope="col">Cooperativas</th>
             <th scope="col">Número de buses</th>
             <th scope="col">Estado</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Editar</th>
           </tr>
         </thead>
         <tbody>
@@ -52,11 +54,11 @@
                 echo '<tr>';
                 echo '<td>' . $cooperativa['nombre_cooperativa'] . '</td>';
                 echo '<td>' . $cooperativa['cantidad_buses'] . '</td>';
+                $estado = ($cooperativa['estado'] == 1) ? 'Activa' : 'Inactiva';
+                echo '<td>' . $estado . '</td>';
                 echo '<td>';
-                echo '<td>';
-                echo '<img class="iconos" src="img/frecuencias.png">';
-                echo '<img class="iconos" src="img/editar.png" onclick="editCooperativa(\'' . $cooperativa['id_cooperativa'] . '\', \'' . $cooperativa['nombre_cooperativa'] . '\', \'' . $cooperativa['ruc_cooperativa'] . '\', \'' . $cooperativa['cantidad_buses'] . '\')">';
-                
+                echo '<img class="iconos" src="img/editar.png" onclick="editCooperativa(\'' . $cooperativa['id_cooperativa'] . '\', \'' . $cooperativa['nombre_cooperativa'] . '\', \'' . $cooperativa['ruc_cooperativa'] . '\', \'' . $cooperativa['cantidad_buses'] . '\', \'' . $cooperativa['estado'] . '\')">';
+
                 echo '</td>';
                 echo '</tr>';
               }
