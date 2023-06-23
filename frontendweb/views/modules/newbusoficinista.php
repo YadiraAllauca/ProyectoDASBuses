@@ -8,6 +8,15 @@
     <title>SCS - Register</title>
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.1.9/sweetalert2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.1.9/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.1.9/sweetalert2.min.js"></script>
 </head>
 
 <body class="bodyBack">
@@ -41,17 +50,77 @@
                     placeholder="Numero de Chasis" required>
             </div>
             <div class="mb-3">
-                <label for="creador" class="form-label" style="font-weight:bold;">Frecuencia</label>
-                <input type="text" class="form-control" name="frecuencia" id="frecuencia">
+                <label for="frecuencia" class="form-label" style="font-weight:bold;">Frecuencia</label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <span class="form-control form-control-sm" style="background-color: #fff; border: none; height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+                      Agregar Frecuencia
+                    </span>
+                    <div class="input-group-append">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div >
-                <button type="submit" class="form-control buttonStyle" id="envio" name="envio">Registrar</button>
+                <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
+                <button type="button" class="btn btn-outline-primary">Cancelar</button>
             </div>
         </form>
     </div>
 
+
+<div class="modal fade" id="frequencyModal" tabindex="-1" aria-labelledby="frequencyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="frequencyModalLabel">Agregar Frecuencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="myForm" method="POST">
+            <table id="frequencyTable" class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Origen</th>
+                  <th scope="col">Destino</th>
+                  <th scope="col">Costo</th>
+                  <th scope="col">Duración</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="5">No se encontraron registros en la tabla</td></tr>
+              </tbody>
+            </table>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <i class="fas fa-check-circle fa-4x text-success"></i>
+          <p class="mt-3">Guardo Exitosamente</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
-<br>
-<br>
-<br>
 </html>
