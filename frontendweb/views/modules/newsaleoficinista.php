@@ -10,7 +10,7 @@
             </div>
             <div class="mb-3">
                 <label for="placa" class="form-label" style="font-weight:bold;">Placa del Bus</label>
-                <input type="text" class="form-control" name="placa" id="placa" placeholder="placa" required>
+                <input type="text" class="form-control" name="placa" id="placa" placeholder="Placa del Bus" required>
             </div>
             <div class="mb-3">
                 <label for="numeroasientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
@@ -32,3 +32,4 @@
             </div>
         </form>
     </div>
+</body>

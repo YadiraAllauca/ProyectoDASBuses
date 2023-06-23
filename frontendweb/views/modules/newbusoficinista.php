@@ -40,7 +40,7 @@
                 <div class="col-sm-8">
                   <div class="input-group">
                     <span class="form-control form-control-sm" style="background-color: #fff; border: none; height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
-                      Agregar Frecuencia
+                      Asignar Frecuencia
                     </span>
                     <div class="input-group-append">
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
