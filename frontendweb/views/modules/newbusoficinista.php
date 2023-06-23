@@ -12,26 +12,26 @@
                 <h4>Informacion del nuevo bus</h4>
             </div>
             <div class="mb-3">
-                <label for="cultivo" class="form-label" style="font-weight:bold;">Cooperativa</label>
+                <label for="cooperativa" class="form-label" style="font-weight:bold;">Cooperativa</label>
                 <input type="text" class="form-control" name="cooperativa" id="cooperativa" placeholder="Cooperativa"
                     required>
             </div>
             <div class="mb-3">
-                <label for="min_temp" class="form-label" style="font-weight:bold;">Numero de Placa</label>
+                <label for="placa" class="form-label" style="font-weight:bold;">Numero de Placa</label>
                 <input type="text" class="form-control" name="placa" id="placa" placeholder="Numero de Placa" required>
             </div>
             <div class="mb-3">
-                <label for="max_temp" class="form-label" style="font-weight:bold;">Numero de asientos</label>
+                <label for="numeroasientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
                 <input type="number" min="30" class="form-control" value="30" name="numeroasientos" id="numeroasientos"
                     required>
             </div>
             <div class="mb-3">
-                <label for="min_hum" class="form-label" style="font-weight:bold;">Numero de registro </label>
+                <label for="numeroregistro" class="form-label" style="font-weight:bold;">Numero de registro </label>
                 <input type="text" class="form-control" name="numeroregistro" id="numeroregistro"
                     placeholder="Numero de Registro" required>
             </div>
             <div class="mb-3">
-                <label for="max_hum" class="form-label" style="font-weight:bold;">Numero de Chasis</label>
+                <label for="numerochasis" class="form-label" style="font-weight:bold;">Numero de Chasis</label>
                 <input type="text" class="form-control" name="numerochasis" id="numerochasis"
                     placeholder="Numero de Chasis" required>
             </div>
