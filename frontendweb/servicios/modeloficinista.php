@@ -9,7 +9,10 @@ class EnlacesPaginas
             $enlacesModel == "validation" ||
             $enlacesModel == "newbus" ||
             $enlacesModel == "newsale" ||
-            $enlacesModel == "validationform"){
+            $enlacesModel == "validationform" ||
+            $enlacesModel == "userprofile" ||
+            $enlacesModel == "newpassword" ||
+            $enlacesModel == "userform"){
                 $module = "views/modules/".$enlacesModel."oficinista.php";
             }else{
             $module = "views/modules/home.php";
