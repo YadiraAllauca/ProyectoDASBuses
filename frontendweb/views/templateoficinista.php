@@ -52,7 +52,7 @@
                     <ul class="navbar-nav">
                     <li class="nav-item"></li>
                     </ul>
-                    <a class="navbar-brand" href="redireccionoficinista.php?action=home" style="justify-content:right">
+                    <a class="navbar-brand" href="redireccionoficinista.php?action=userprofile" style="justify-content:right">
                     <img src="img/avatar.png" class="avatar"> </a>
                 <button type="button" class="btn btn-danger; buttonStyle" id="btnLogout">Cerrar Sesión</button>
             </div>

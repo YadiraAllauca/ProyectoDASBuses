@@ -29,8 +29,8 @@
             </div>
 
             <div class="border rounded p-3 d-flex flex-column mt-3">
-                <a href="redireccionadmin.php?action=usuarioform" class="btn btn-outline-secondary mb-2 border-0 shadow-none">Editar Información del Perfil</a>
-                <a href="redireccionadmin.php?action=nuevacontrasenia" class="btn btn-outline-secondary mb-2 border-0 shadow-none">Cambiar Contraseña</a>
+                <a href="redireccionoficinista.php?action=userform" class="btn btn-outline-secondary mb-2 border-0 shadow-none">Editar Información del Perfil</a>
+                <a href="redireccionoficinista.php?action=newpassword" class="btn btn-outline-secondary mb-2 border-0 shadow-none">Cambiar Contraseña</a>
             </div>
         </div>
     </div>
