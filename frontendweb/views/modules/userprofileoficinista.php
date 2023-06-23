@@ -21,7 +21,7 @@
             <div class="text-center mt-3">
                 <p class="fw-bold fs-4 mb-1">Nombres y Apellidos
                     <a href="#">
-                        <img class="iconos" src="img/editar.png" alt="Edit Profile" />
+                        <img class="icons" src="img/editar.png" alt="Edit Profile" />
                     </a>
                 </p>
 
