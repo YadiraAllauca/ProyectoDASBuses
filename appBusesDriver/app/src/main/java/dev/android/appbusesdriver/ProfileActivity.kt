@@ -22,8 +22,20 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         binding.btnLogout.setOnClickListener {
-            val intent: Intent = Intent(this, WelcomeActivity::class.java)
+            val intent = Intent(this, WelcomeActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
+
+        binding.btnEditInfo.setOnClickListener {
+            val intent = Intent(this, ProfileInfoActivity::class.java).apply {
+            }
+            startActivity(intent)
+        }
+
+        binding.btnChangePassword.setOnClickListener {
+            val intent = Intent(this, ChangePasswordActivity::class.java).apply {
+            }
             startActivity(intent)
         }
 
