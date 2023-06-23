@@ -19,11 +19,7 @@
             </div>
 
             <div class="text-center mt-3">
-                <p class="fw-bold fs-4 mb-1">Nombres y Apellidos
-                    <a href="#">
-                        <img class="icons" src="img/editar.png" alt="Edit Profile" />
-                    </a>
-                </p>
+                <p class="fw-bold fs-4 mb-1">Nombres y Apellidos</p>
 
                 <p class="fs-5 text-secondary">Nombre y Apellido</p>
             </div>
