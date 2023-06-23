@@ -1,10 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
-
 <body class="bodyBack">
     <div class="divFormulario">
         <form class="formularioLogin" method="POST">
@@ -44,7 +37,7 @@
                     </span>
                     <div class="input-group-append">
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
-                        <i >+</i>
+                        <i>+</i>
                       </button>
                     </div>
                   </div>
@@ -56,56 +49,3 @@
             </div>
         </form>
     </div>
-
-
-<div class="modal fade" id="frequencyModal" tabindex="-1" aria-labelledby="frequencyModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="frequencyModalLabel">Agregar Frecuencia</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="myForm" method="POST">
-            <table id="frequencyTable" class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Origen</th>
-                  <th scope="col">Destino</th>
-                  <th scope="col">Costo</th>
-                  <th scope="col">Duración</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td colspan="5">No se encontraron registros en la tabla</td></tr>
-              </tbody>
-            </table>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Guardar</button>
-              <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-          <i class="fas fa-check-circle fa-4x text-success"></i>
-          <p class="mt-3">Guardo Exitosamente</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</body>
