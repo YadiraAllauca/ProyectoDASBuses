@@ -48,7 +48,7 @@ if(isset($_POST['envio'])){
         <label for="estado" class="form-label" style="font-weight:bold;">Estado</label>
         <select class="form-control" name="estado" id="estado">
           <option value="1">Activo</option>
-          <option value="2">Inactivo</option>
+          <option value="0">Inactivo</option>
         </select>
       </div>
       <div class="mb-3">

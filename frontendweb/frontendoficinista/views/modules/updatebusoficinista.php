@@ -58,7 +58,7 @@ $estado = $_GET['estado'];
                 <select class="form-control" name="estado" id="estado">
                     <option value="1" <?php if ($estado == 1)
                         echo 'selected' ?>>Activo</option>
-                        <option value="2" <?php if ($estado == 2)
+                        <option value="0" <?php if ($estado == 0)
                         echo 'selected' ?>>Inactivo</option>
                     </select>
                 </div>
