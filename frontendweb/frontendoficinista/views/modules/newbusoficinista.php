@@ -1,3 +1,10 @@
+<?php
+if(isset($_POST['envio'])){
+  include "https://nilotic-quart.000webhostapp.com/agregarBus.php";
+  
+}
+
+?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +18,7 @@
       <div class="divTituloLogin">
         <h4>Informacion del nuevo bus</h4>
       </div>
+      <input type="text" id="id_bus">
       <div class="mb-3">
         <label for="numero_bus" class="form-label" style="font-weight:bold;">Numero Bus</label>
         <input type="text" class="form-control" name="numero_bus" id="numero_bus" placeholder="Numero Bus" required>

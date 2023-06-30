@@ -29,6 +29,7 @@
                     $id_bus = $val[$i]['id_bus'];
                     $numero_bus = $val[$i]['numero_bus'];
                     $placa_bus = $val[$i]['placa_bus'];
+                    $chasis_bus = $val[$i]['chasis_bus'];
                     $carroceria_bus = $val[$i]['carroceria_bus'];
                     $cantidad_asientos = $val[$i]['cantidad_asientos'];
                     $fotografia = $val[$i]['fotografia'];
@@ -40,22 +41,26 @@
                             <?php echo $placa_bus; ?>
                         </td>
                         <td>
-                            <?php echo $val[$i]["chasis_bus"]; ?>
+                            <?php echo $chasis_bus ?>
                         </td>
                         <td>
-                            <?php echo $val[$i]["carroceria_bus"]; ?>
+                            <?php echo $carroceria_bus ?>
                         </td>
                         <td>
-                            <?php echo $val[$i]["cantidad_asientos"]; ?>
+                            <?php echo $cantidad_asientos ?>
                         </td>
                         <td>
-                            <?php echo $val[$i]["estado"]; ?>
+                            <?php if ($estado == 1) {
+                                echo 'Activo';
+                            } else {
+                                echo 'Inactivo';
+                            } ?>
                         </td>
-                        <td><a class="nav-link active; navTemplate" 
-                        href="redireccionoficinista.php?action=updatebus&id_bus=<?php echo $id_bus?>
-                        &numero_bus=<?php echo $numero_bus?>&placa_bus=<?php echo $placa_bus?>
-                        &carroceria_bus=<?php echo $carroceria_bus?>&cantidad_asientos=<?php echo $cantidad_asientos?>
-                        &fotografia=<?php echo $fotografia?>&id_socio=<?php echo $id_socio?>&estado=<?php echo $estado?>">
+                        <td><a class="nav-link active; navTemplate"
+                                href="redireccionoficinista.php?action=updatebus&id_bus=<?php echo $id_bus ?>
+                        &numero_bus=<?php echo $numero_bus ?>&placa_bus=<?php echo $placa_bus ?>
+                        &carroceria_bus=<?php echo $carroceria_bus ?>&cantidad_asientos=<?php echo $cantidad_asientos ?>
+                        &fotografia=<?php echo $fotografia ?>&id_socio=<?php echo $id_socio ?>&estado=<?php echo $estado ?>">
                                 <img src="img/editar.png" class="icons">
                             </a></td>
                     </tr>
