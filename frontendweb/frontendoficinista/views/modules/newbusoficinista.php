@@ -1,64 +1,75 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
 
 <body class="bodyBack">
-    <div class="divFormulario">
-        <form class="formularioLogin" method="POST">
-            <div class="divTituloLogin">
-                <h4>Informacion del nuevo bus</h4>
+  <div class="divFormulario">
+    <form class="formularioLogin" method="POST">
+      <div class="divTituloLogin">
+        <h4>Informacion del nuevo bus</h4>
+      </div>
+      <input type="text" class="form-control" name="id_bus" id="id_bus" value="<?php echo $id_bus ?>" hidden>
+      <div class="mb-3">
+        <label for="numero_bus" class="form-label" style="font-weight:bold;">Numero Bus</label>
+        <input type="text" class="form-control" name="numero_bus" id="numero_bus" placeholder="Numero Bus" required>
+      </div>
+      <div class="mb-3">
+        <label for="placa_bus" class="form-label" style="font-weight:bold;">Numero de Placa</label>
+        <input type="text" class="form-control" name="placa_bus" id="placa_bus" placeholder="Numero de Placa" required>
+      </div>
+      <div class="mb-3">
+        <label for="carroceria_bus" class="form-label" style="font-weight:bold;">Carroceria</label>
+        <input type="text" class="form-control" name="carroceria_bus" id="carroceria_bus" placeholder="Carroceria"
+          required>
+      </div>
+      <div class="mb-3">
+        <label for="placa_bus" class="form-label" style="font-weight:bold;">Numero de Placa</label>
+        <input type="text" class="form-control" name="placa_bus" id="placa_bus" placeholder="Numero de Placa" required>
+      </div>
+      <div class="mb-3">
+        <label for="cantidad_asientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
+        <input type="number" min="30" class="form-control" name="cantidad_asientos" id="cantidad_asientos" required>
+      </div>
+      <div class="mb-3">
+        <label for="id_socio" class="form-label" style="font-weight:bold;">Socio</label>
+        <input type="text" class="form-control" name="id_socio" id="id_socio" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="estado" class="form-label" style="font-weight:bold;">Estado</label>
+        <select class="form-control" name="estado" id="estado">
+          <option value="1">Activo</option>
+          <option value="2">Inactivo</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="frecuencia" class="form-label" style="font-weight:bold;">Frecuencia</label>
+        <div class="col-sm-8">
+          <div class="input-group">
+            <span class="form-control form-control-sm"
+              style="background-color: #fff; border: none; height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
+              Asignar Frecuencia
+            </span>
+            <div class="input-group-append">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
+                <i>+</i>
+              </button>
             </div>
-            <div class="mb-3">
-                <label for="cooperativa" class="form-label" style="font-weight:bold;">Cooperativa</label>
-                <input type="text" class="form-control" name="cooperativa" id="cooperativa" placeholder="Cooperativa"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="placa" class="form-label" style="font-weight:bold;">Numero de Placa</label>
-                <input type="text" class="form-control" name="placa" id="placa" placeholder="Numero de Placa" required>
-            </div>
-            <div class="mb-3">
-                <label for="numeroasientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
-                <input type="number" min="30" class="form-control" value="30" name="numeroasientos" id="numeroasientos"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="numeroregistro" class="form-label" style="font-weight:bold;">Numero de registro </label>
-                <input type="text" class="form-control" name="numeroregistro" id="numeroregistro"
-                    placeholder="Numero de Registro" required>
-            </div>
-            <div class="mb-3">
-                <label for="numerochasis" class="form-label" style="font-weight:bold;">Numero de Chasis</label>
-                <input type="text" class="form-control" name="numerochasis" id="numerochasis"
-                    placeholder="Numero de Chasis" required>
-            </div>
-            <div class="mb-3">
-                <label for="frecuencia" class="form-label" style="font-weight:bold;">Frecuencia</label>
-                <div class="col-sm-8">
-                  <div class="input-group">
-                    <span class="form-control form-control-sm" style="background-color: #fff; border: none; height: auto; padding: 0.375rem 0.75rem; font-size: 0.875rem;">
-                      Asignar Frecuencia
-                    </span>
-                    <div class="input-group-append">
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#frequencyModal">
-                        <i >+</i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div >
-                <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
-                <button type="button" class="btn btn-danger"><a href="redireccionoficinista.php?action=buses">Cancelar</a></button>
-            </div>
-        </form>
-    </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
+        <button type="button" class="btn btn-danger"><a
+            href="redireccionoficinista.php?action=buses">Cancelar</a></button>
+      </div>
+    </form>
+  </div>
 
 
-<div class="modal fade" id="frequencyModal" tabindex="-1" aria-labelledby="frequencyModalLabel" aria-hidden="true">
+  <div class="modal fade" id="frequencyModal" tabindex="-1" aria-labelledby="frequencyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -78,7 +89,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td colspan="5">No se encontraron registros en la tabla</td></tr>
+                <tr>
+                  <td colspan="5">No se encontraron registros en la tabla</td>
+                </tr>
               </tbody>
             </table>
             <div class="modal-footer">
