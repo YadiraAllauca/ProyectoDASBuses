@@ -11,7 +11,6 @@
       <div class="divTituloLogin">
         <h4>Informacion del nuevo bus</h4>
       </div>
-      <input type="text" class="form-control" name="id_bus" id="id_bus" value="<?php echo $id_bus ?>" hidden>
       <div class="mb-3">
         <label for="numero_bus" class="form-label" style="font-weight:bold;">Numero Bus</label>
         <input type="text" class="form-control" name="numero_bus" id="numero_bus" placeholder="Numero Bus" required>
@@ -31,11 +30,11 @@
       </div>
       <div class="mb-3">
         <label for="cantidad_asientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
-        <input type="number" min="30" class="form-control" name="cantidad_asientos" id="cantidad_asientos" required>
+        <input type="number" min="30" class="form-control" value="30" name="cantidad_asientos" id="cantidad_asientos" required>
       </div>
       <div class="mb-3">
         <label for="id_socio" class="form-label" style="font-weight:bold;">Socio</label>
-        <input type="text" class="form-control" name="id_socio" id="id_socio" readonly>
+        <input type="text" class="form-control" name="id_socio" id="id_socio" placeholder="Socio" required>
       </div>
       <div class="mb-3">
         <label for="estado" class="form-label" style="font-weight:bold;">Estado</label>
