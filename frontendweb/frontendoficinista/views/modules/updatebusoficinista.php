@@ -47,7 +47,7 @@ $estado = $_GET['estado'];
                 <label for="cantidad_asientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
                 <input type="number" min="30" class="form-control" value="<?php echo $cantidad_asientos ?>"
                     name="cantidad_asientos" id="cantidad_asientos" required>
-            </div>            
+            </div>
             <div class="mb-3">
                 <label for="id_socio" class="form-label" style="font-weight:bold;">Socio</label>
                 <input type="text" class="form-control" name="id_socio" id="id_socio" value="<?php echo $id_socio ?>"
@@ -56,15 +56,17 @@ $estado = $_GET['estado'];
             <div class="mb-3">
                 <label for="estado" class="form-label" style="font-weight:bold;">Estado</label>
                 <select class="form-control" name="estado" id="estado">
-                    <option value="1"<?php if ($estado == 1) echo 'selected'?>>Activo</option>
-                    <option value="2" <?php if ($estado == 2) echo 'selected'?>>Inactivo</option>
-                </select>
-            </div>
-            <div>
-                <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
-                <button type="button" class="btn btn-danger"><a
-                        href="redireccionoficinista.php?action=buses">Cancelar</a></button>
-            </div>
-        </form>
-    </div>
-</body>
+                    <option value="1" <?php if ($estado == 1)
+                        echo 'selected' ?>>Activo</option>
+                        <option value="2" <?php if ($estado == 2)
+                        echo 'selected' ?>>Inactivo</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
+                    <button type="button" class="btn btn-danger"><a
+                            href="redireccionoficinista.php?action=buses">Cancelar</a></button>
+                </div>
+            </form>
+        </div>
+    </body>
