@@ -52,7 +52,7 @@
             </div>
             <div >
                 <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
-                <button type="button" class="btn btn-outline-primary">Cancelar</button>
+                <button type="button" class="btn btn-danger"><a href="redireccionoficinista.php?action=buses">Cancelar</a></button>
             </div>
         </form>
     </div>
