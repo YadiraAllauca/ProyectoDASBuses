@@ -23,6 +23,11 @@
     });
   });
 </script>
+<script>
+    function redirectToBuses(){
+    window.location.href = 'redireccionoficinista.php?action=buses';
+  }
+</script>
 
 <?php
 $id_bus = $_GET['id_bus'];
@@ -49,7 +54,7 @@ $estado = $_GET['estado'];
             <div class="divTituloLogin">
                 <h4>Actualizacion de datos del bus</h4>
             </div>
-            <input type="text" class="form-control" name="id_bus" id="id_bus" value="<?php echo $id_bus ?>" readonly>
+            <input type="text" class="form-control" name="id_bus" id="id_bus" value="<?php echo $id_bus ?>" hidden>
             <div class="mb-3">
                 <label for="numero_bus" class="form-label" style="font-weight:bold;">Numero Bus</label>
                 <input type="text" class="form-control" name="numero_bus" id="numero_bus" placeholder="Numero Bus"
@@ -95,8 +100,7 @@ $estado = $_GET['estado'];
                     </select>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary" id="envio" name="envio"><a
-                            href="redireccionoficinista.php?action=buses">Registrar</a></button>
+                    <button type="submit" class="btn btn-primary" id="envio" onclick="redirectToBuses()" name="envio">Registrar</button>
                     <button type="button" class="btn btn-danger"><a
                             href="redireccionoficinista.php?action=buses">Cancelar</a></button>
                 </div>

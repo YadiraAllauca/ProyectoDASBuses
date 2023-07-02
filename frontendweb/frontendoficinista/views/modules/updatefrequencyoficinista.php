@@ -1,11 +1,11 @@
 <?php
-$id_frecuencia = $val[$i]['id_frecuencia'];
-$origen_frcuencia = $val[$i]['origen_frecuencia'];
-$destino_frecuencia = $val[$i]['destino_frecuencia'];
-$duracion_frecuencia = $val[$i]['duracion_frecuencia'];
-$tipo_frecuencia = $val[$i]['tipo_frecuencia'];
-$costo_frecuencia = $val[$i]['costo_frecuencia'];
-$estado_frecuencia = $val[$i]['estado_frecuencia'];
+$id_frecuencia = $_GET['id_frecuencia'];
+$origen_frcuencia = $_GET['origen_frecuencia'];
+$destino_frecuencia = $_GET['destino_frecuencia'];
+$duracion_frecuencia = $_GET['duracion_frecuencia'];
+$tipo_frecuencia = $_GET['tipo_frecuencia'];
+$costo_frecuencia = $_GET['costo_frecuencia'];
+$estado_frecuencia = $_GET['estado_frecuencia'];
 ?>
 <head>
     <meta charset="UTF-8">
@@ -27,31 +27,6 @@ $estado_frecuencia = $val[$i]['estado_frecuencia'];
                     value="<?php echo $numero_bus ?>" required>
             </div>
             <div class="mb-3">
-                <label for="placa_bus" class="form-label" style="font-weight:bold;">Numero de Placa</label>
-                <input type="text" class="form-control" name="placa_bus" id="placa_bus" placeholder="Numero de Placa"
-                    value="<?php echo $placa_bus ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="carroceria_bus" class="form-label" style="font-weight:bold;">Carroceria</label>
-                <input type="text" class="form-control" name="carroceria_bus" id="carroceria_bus"
-                    placeholder="Carroceria" value="<?php echo $carroceria_bus ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="placa_bus" class="form-label" style="font-weight:bold;">Numero de Placa</label>
-                <input type="text" class="form-control" name="placa_bus" id="placa_bus" placeholder="Numero de Placa"
-                    value="<?php echo $placa_bus ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="cantidad_asientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
-                <input type="number" min="30" class="form-control" value="<?php echo $cantidad_asientos ?>"
-                    name="cantidad_asientos" id="cantidad_asientos" required>
-            </div>
-            <div class="mb-3">
-                <label for="id_socio" class="form-label" style="font-weight:bold;">Socio</label>
-                <input type="text" class="form-control" name="id_socio" id="id_socio" value="<?php echo $id_socio ?>"
-                    readonly>
-            </div>
-            <div class="mb-3">
                 <label for="estado" class="form-label" style="font-weight:bold;">Estado</label>
                 <select class="form-control" name="estado" id="estado">
                     <option value="1" <?php if ($estado == 1)
@@ -61,9 +36,12 @@ $estado_frecuencia = $val[$i]['estado_frecuencia'];
                     </select>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
+                    <button type="submit" class="btn btn-primary" id="envio" name="envio">
+                        <a href="redireccionoficinista.php?action=frequencies">Registrar
+</a>
+                        </button>
                     <button type="button" class="btn btn-danger"><a
-                            href="redireccionoficinista.php?action=buses">Cancelar</a></button>
+                            href="redireccionoficinista.php?action=frequencies">Cancelar</a></button>
                 </div>
             </form>
         </div>
