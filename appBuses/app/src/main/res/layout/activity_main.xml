@@ -131,7 +131,7 @@
         android:drawableStart="@drawable/ic_baseline_location_city_24"
         android:drawablePadding="10dp"
         android:elevation="5dp"
-        android:hint="From"
+        android:hint="To"
         android:inputType="textPersonName"
         android:padding="15dp"
         android:textSize="16sp"

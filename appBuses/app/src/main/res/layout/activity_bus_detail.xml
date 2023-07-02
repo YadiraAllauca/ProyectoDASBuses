@@ -31,7 +31,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imgProfile"
+                    android:id="@+id/imgBus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
@@ -77,7 +77,7 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/txtCooperative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -96,10 +96,10 @@
             android:layout_marginTop="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10">
+            app:layout_constraintTop_toBottomOf="@+id/txtCooperative">
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/txtRoute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -114,9 +114,9 @@
                 android:id="@+id/imageView10"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintBottom_toBottomOf="@+id/txtRoute"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="@+id/txtRoute"
                 app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
             <ImageView
@@ -124,13 +124,13 @@
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_marginStart="175dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView11"
+                app:layout_constraintBottom_toBottomOf="@+id/txtRoute"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toTopOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="@+id/txtRoute"
                 app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/txtDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -173,7 +173,7 @@
                 app:srcCompat="@drawable/ic_baseline_access_time_filled_24" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/txtDepartureTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="166dp"
@@ -200,7 +200,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView12" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/txtArrivalTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="166dp"
@@ -222,7 +222,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view3">
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/txtBusNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -244,7 +244,7 @@
                 app:srcCompat="@drawable/ic_baseline_directions_bus_244" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/txtBusChassis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="166dp"
@@ -253,12 +253,12 @@
                 android:text="Chassis"
                 android:textColor="#A6A6A6"
                 android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView19"
+                app:layout_constraintBottom_toBottomOf="@+id/txtBusNumber"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
-                app:layout_constraintTop_toTopOf="@+id/textView19" />
+                app:layout_constraintTop_toTopOf="@+id/txtBusNumber" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/txtBusCarriage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -271,7 +271,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView13" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/txtBusBodywork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="166dp"
@@ -279,13 +279,13 @@
                 android:text="Bodywork"
                 android:textColor="#A6A6A6"
                 android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                app:layout_constraintBottom_toBottomOf="@+id/txtBusCarriage"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
-                app:layout_constraintTop_toTopOf="@+id/textView17" />
+                app:layout_constraintTop_toTopOf="@+id/txtBusCarriage" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/txtPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -303,8 +303,8 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Executive Price"
             android:textSize="16dp"
-            app:layout_constraintStart_toStartOf="@+id/textView21"
-            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+            app:layout_constraintStart_toStartOf="@+id/txtPrice"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
 
         <Button
             android:id="@+id/btnBuy"
