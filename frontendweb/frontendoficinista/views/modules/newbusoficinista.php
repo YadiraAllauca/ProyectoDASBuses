@@ -23,11 +23,6 @@
     });
   });
 </script>
-<script>
-  function redirectToBuses(){
-    window.location.href = 'redireccionoficinista.php?action=buses';
-  }
-</script>
 
 
 <head>
@@ -98,7 +93,8 @@
         </div>
       </div>
       <div>
-        <button type="submit" class="btn btn-primary" id="envio" onclick="redirectToBuses()" name="envio">Registrar</button>
+        <button type="submit" class="btn btn-primary" id="envio" name="envio"><a
+            href="redireccionoficinista.php?action=buses">Registrar</a></button>
         <button type="button" class="btn btn-danger"><a
             href="redireccionoficinista.php?action=buses">Cancelar</a></button>
       </div>
