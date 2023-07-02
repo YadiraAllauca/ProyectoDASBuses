@@ -1,10 +1,35 @@
-<?php
-if(isset($_POST['envio'])){
-  include "https://nilotic-quart.000webhostapp.com/agregarBus.php";
-  
-}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#newBus').submit(function(e) {
+      e.preventDefault(); // Prevent the default form submission
 
-?>
+      // Retrieve form data
+      var formData = $(this).serialize();
+
+      // Send the form data using AJAX
+      $.ajax({
+        type: 'POST',
+        url: "https://nilotic-quart.000webhostapp.com/agregarBus.php",
+        data: formData,
+        success: function(response) {
+          console.log(response);
+        },
+        error: function(xhr, status, error) {
+          // Handle the error case
+          console.log(xhr.responseText); // Example: Log the error response to the browser console
+        }
+      });
+    });
+  });
+</script>
+<script>
+  function redirectToBuses(){
+    window.location.href = 'redireccionoficinista.php?action=buses';
+  }
+</script>
+
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +39,11 @@ if(isset($_POST['envio'])){
 
 <body class="bodyBack">
   <div class="divFormulario">
-    <form class="formularioLogin" method="POST">
+    <form id="newBus" method="POST">
       <div class="divTituloLogin">
         <h4>Informacion del nuevo bus</h4>
       </div>
-      <input type="text" id="id_bus">
+      <input type="text" id="id_bus" value="" hidden>
       <div class="mb-3">
         <label for="numero_bus" class="form-label" style="font-weight:bold;">Numero Bus</label>
         <input type="text" class="form-control" name="numero_bus" id="numero_bus" placeholder="Numero Bus" required>
@@ -28,21 +53,26 @@ if(isset($_POST['envio'])){
         <input type="text" class="form-control" name="placa_bus" id="placa_bus" placeholder="Numero de Placa" required>
       </div>
       <div class="mb-3">
+        <label for="chasis_bus" class="form-label" style="font-weight:bold;">Chasis</label>
+        <input type="text" class="form-control" name="chasis_bus" id="chasis_bus" placeholder="Carroceria" required>
+      </div>
+      <div class="mb-3">
         <label for="carroceria_bus" class="form-label" style="font-weight:bold;">Carroceria</label>
         <input type="text" class="form-control" name="carroceria_bus" id="carroceria_bus" placeholder="Carroceria"
           required>
       </div>
       <div class="mb-3">
-        <label for="placa_bus" class="form-label" style="font-weight:bold;">Numero de Placa</label>
-        <input type="text" class="form-control" name="placa_bus" id="placa_bus" placeholder="Numero de Placa" required>
-      </div>
-      <div class="mb-3">
         <label for="cantidad_asientos" class="form-label" style="font-weight:bold;">Numero de asientos</label>
-        <input type="number" min="30" class="form-control" value="30" name="cantidad_asientos" id="cantidad_asientos" required>
+        <input type="number" min="30" class="form-control" value="30" name="cantidad_asientos" id="cantidad_asientos"
+          required>
       </div>
       <div class="mb-3">
         <label for="id_socio" class="form-label" style="font-weight:bold;">Socio</label>
         <input type="text" class="form-control" name="id_socio" id="id_socio" placeholder="Socio" required>
+      </div>
+      <div class="mb-3">
+        <label for="fotografia" class="form-label" style="font-weight:bold;">Fotografia</label>
+        <input type="text" class="form-control" name="fotografia" id="fotografia" placeholder="Fotografia" required>
       </div>
       <div class="mb-3">
         <label for="estado" class="form-label" style="font-weight:bold;">Estado</label>
@@ -68,7 +98,7 @@ if(isset($_POST['envio'])){
         </div>
       </div>
       <div>
-        <button type="submit" class="btn btn-primary" id="envio" name="envio">Registrar</button>
+        <button type="submit" class="btn btn-primary" id="envio" onclick="redirectToBuses()" name="envio">Registrar</button>
         <button type="button" class="btn btn-danger"><a
             href="redireccionoficinista.php?action=buses">Cancelar</a></button>
       </div>
