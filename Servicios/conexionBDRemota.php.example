@@ -1,15 +1,5 @@
 <?php
 
-$host = "localhost";
-$dbUsuario = "TU_USUARIO"; 
-$dbContraseña = "TU_CONTRASEÑA"; 
-$dbNombre = "nombre_base_datos";
-
-$conexion = new mysqli($host, $dbUsuario, $dbContraseña, $dbNombre);
-
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
-
-?>
-
+// Ejemplo de compatibilidad. La conexión se configura con DB_* en el entorno.
+// Consulta ../.env.example; no introduzcas credenciales en este archivo.
+require_once __DIR__ . '/conexionBD.php';

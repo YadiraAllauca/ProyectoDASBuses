@@ -1,14 +1,12 @@
 # ============================================
 # Archivos Sensibles - CRÍTICO
 # ============================================
-# Archivos con credenciales de base de datos
-Servicios/conexionBDLocal.php
-Servicios/conexionBDRemota.php
 
 # Archivos de configuración con datos sensibles
 *.env
-.env.local
-.env.production
+.env
+.env.*
+!.env.example
 config.php
 credentials.php
 
@@ -81,7 +79,6 @@ error_log
 # ============================================
 /vendor/
 composer.phar
-composer.lock
 
 # ============================================
 # Sistema Operativo
@@ -144,13 +141,11 @@ yarn-error.log*
 node_modules/
 npm-debug.log
 yarn-error.log
-package-lock.json
-yarn.lock
 
 # ============================================
 # Archivos de Base de Datos Local
 # ============================================
-*.sql
+/local-data/
 *.db
 *.sqlite
 *.sqlite3
